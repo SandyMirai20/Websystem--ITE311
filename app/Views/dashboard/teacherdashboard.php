@@ -43,7 +43,7 @@
             </div>
         <?php endif; ?>
 
-        <!-- Welcome Section -->
+        <!-- Welcome Section area-->
         <div class="row">
             <div class="col-12">
                 <div class="card shadow-sm">
