@@ -201,9 +201,13 @@ class Auth extends BaseController
         $role = strtolower(session()->get('role') ?? 'student');
         
         switch ($role) {
+            case 'admin':
+                return view('dashboard/admindashboard', $userData);
+            case 'instructor':
+                return view('dashboard/instructordashboard', $userData);
             case 'student':
             default:
-                return view('dashboard', $userData);
+                return view('dashboard/studentdashboard', $userData);
         }
     }
 }

@@ -20,10 +20,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('/') ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="<?= base_url('dashboard') ?>">Dashboard</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
