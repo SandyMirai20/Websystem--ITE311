@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
                 'name' => 'Jim Jamero',
                 'email' => 'Jamero@gail.com',
                 'password' => password_hash('prof123', PASSWORD_DEFAULT),
-                'role' => 'instructor',
+                'role' => 'teacher',
                 'created_at' => date('Y-m-d H:i:s')
             ]
         ];

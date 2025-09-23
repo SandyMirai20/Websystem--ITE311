@@ -203,8 +203,8 @@ class Auth extends BaseController
         switch ($role) {
             case 'admin':
                 return view('dashboard/admindashboard', $userData);
-            case 'instructor':
-                return view('dashboard/instructordashboard', $userData);
+            case 'teacher':
+                return view('dashboard/teacherdashboard', $userData);
             case 'student':
             default:
                 return view('dashboard/studentdashboard', $userData);
