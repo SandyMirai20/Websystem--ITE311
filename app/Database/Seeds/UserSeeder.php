@@ -16,6 +16,7 @@ class UserSeeder extends Seeder
                 'email' => 'GomezCrisandy@gmail.com',
                 'password' => password_hash('admin123', PASSWORD_DEFAULT),
                 'role' => 'admin',
+                'is_active' => 1,
                 'created_at' => date('Y-m-d H:i:s')
             ],
             [
@@ -23,13 +24,15 @@ class UserSeeder extends Seeder
                 'email' => 'JeraldMaca@gmail.com',
                 'password' => password_hash('2311600073', PASSWORD_DEFAULT),
                 'role' => 'student',
+                'is_active' => 1,
                 'created_at' => date('Y-m-d H:i:s')
             ],
             [
                 'name' => 'Jim Jamero',
                 'email' => 'Jamero@gail.com',
-                'password' => password_hash('prof123', PASSWORD_DEFAULT),
+                'password' => password_hash('prof1234567', PASSWORD_DEFAULT),
                 'role' => 'teacher',
+                'is_active' => 1,
                 'created_at' => date('Y-m-d H:i:s')
             ]
         ];

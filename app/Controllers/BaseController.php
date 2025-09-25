@@ -35,13 +35,28 @@ abstract class BaseController extends Controller
      *
      * @var list<string>
      */
-    protected $helpers = [];
+    protected $helpers = ['url', 'form', 'session', 'html', 'security'];
 
     /**
-     * Be sure to declare properties for any property fetch you initialized.
-     * The creation of dynamic property is deprecated in PHP 8.2.
+     * User data from session
+     *
+     * @var array
      */
-    // protected $session;
+    protected $userData = [];
+    
+    /**
+     * Current user's role
+     *
+     * @var string
+     */
+    protected $userRole = 'guest';
+    
+    /**
+     * View data that will be passed to all views
+     *
+     * @var array
+     */
+    protected $viewData = [];
 
     /**
      * @return void
@@ -51,8 +66,119 @@ abstract class BaseController extends Controller
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
-        // Preload any models, libraries, etc, here.
-
-        // E.g.: $this->session = service('session');
+        // Initialize user data from session
+        $this->initializeUserData();
+        
+        // Set up common view data
+        $this->setupViewData();
+    }
+    
+    /**
+     * Initialize user data from session
+     */
+    protected function initializeUserData()
+    {
+        $session = session();
+        
+        if ($session->get('isLoggedIn')) {
+            $this->userData = [
+                'id' => $session->get('userID'),
+                'name' => $session->get('name'),
+                'email' => $session->get('email'),
+                'role' => $session->get('role')
+            ];
+            
+            $this->userRole = $session->get('role') ?? 'guest';
+        }
+    }
+    
+    /**
+     * Set up common view data
+     */
+    protected function setupViewData()
+    {
+        $this->viewData = [
+            'title' => 'LMS System',
+            'user' => $this->userData,
+            'isLoggedIn' => !empty($this->userData)
+        ];
+    }
+    
+    /**
+     * Check if user has a specific role
+     *
+     * @param string|array $roles Role or array of roles to check
+     * @return bool
+     */
+    protected function hasRole($roles)
+    {
+        if (empty($this->userRole)) {
+            return false;
+        }
+        
+        if (is_string($roles)) {
+            return $this->userRole === $roles;
+        }
+        
+        if (is_array($roles)) {
+            return in_array($this->userRole, $roles);
+        }
+        
+        return false;
+    }
+    
+    /**
+     * Check if user is logged in
+     *
+     * @return bool
+     */
+    protected function isLoggedIn()
+    {
+        return !empty($this->userData);
+    }
+    
+    /**
+     * Require user to be logged in
+     *
+     * @return mixed
+     */
+    protected function requireLogin()
+    {
+        if (!$this->isLoggedIn()) {
+            session()->setFlashdata('error', 'You must be logged in to access this page.');
+            return redirect()->to('/login')->with('redirect', current_url());
+        }
+        
+        return true;
+    }
+    
+    /**
+     * Require user to have a specific role
+     *
+     * @param string|array $roles Role or array of roles
+     * @return mixed
+     */
+    protected function requireRole($roles)
+    {
+        $this->requireLogin();
+        
+        if (!$this->hasRole($roles)) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('You do not have permission to access this page.');
+        }
+        
+        return true;
+    }
+    
+    /**
+     * Render view with common data
+     *
+     * @param string $view View file path
+     * @param array $data Data to pass to view
+     * @return string
+     */
+    protected function render($view, array $data = [])
+    {
+        $data = array_merge($this->viewData, $data);
+        return view($view, $data);
     }
 }

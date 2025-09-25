@@ -33,6 +33,12 @@ class CreateUsersTable extends Migration
                 'constraint' => ['admin', 'teacher', 'student'],
                 'default'    => 'student',
             ],
+            'is_active' => [
+                'type'       => 'TINYINT',
+                'constraint' => 1,
+                'default'    => 1,
+                'comment'    => '1 = active, 0 = inactive'
+            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,

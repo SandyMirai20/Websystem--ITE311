@@ -34,6 +34,8 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'auth'          => \App\Filters\RoleFilter::class,
+        'role'          => \App\Filters\RoleFilter::class,
     ];
 
     /**
@@ -60,14 +62,13 @@ class Filters extends BaseFilters
             'toolbar',     // Debug Toolbar
         ],
     ];
-
     /**
      * List of filter aliases that are always
      * applied before and after every request.
      *
      * @var array{
-     *     before: array<string, array{except: list<string>|string}>|list<string>,
-     *     after: array<string, array{except: list<string>|string}>|list<string>
+     *     before: array<string, array<string, array<string, string>>>|array<string, list<string>>,
+     *     after: array<string, array<string, array<string, string>>>|array<string, list<string>>
      * }
      */
     public array $globals = [
@@ -77,16 +78,18 @@ class Filters extends BaseFilters
             // 'invalidchars',
         ],
         'after' => [
+            'toolbar',
             // 'honeypot',
             // 'secureheaders',
         ],
     ];
-
+    
     /**
      * List of filter aliases that works on a
      * particular HTTP method (GET, POST, etc.).
      *
      * Example:
+     * 'post' => ['foo', 'bar']
      * 'POST' => ['foo', 'bar']
      *
      * If you use this, you should disable auto-routing because auto-routing
