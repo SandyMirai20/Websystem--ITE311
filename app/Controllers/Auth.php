@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
-
 class Auth extends BaseController
 {
     protected $validation;
@@ -12,10 +11,21 @@ class Auth extends BaseController
     public function __construct()
     {
         $this->validation = \Config\Services::validation();
+        
+        // Ensure session directory exists and is writable
+        $sessionPath = WRITEPATH . 'session';
+        if (!is_dir($sessionPath)) {
+            mkdir($sessionPath, 0700, true);
+        }
     }
     
     public function register()
     {
+        // If user is already logged in, redirect to dashboard
+        if (session()->has('isLoggedIn')) {
+            return redirect()->to('/dashboard');
+        }
+        
         $db = \Config\Database::connect();
         
         if ($this->request->getMethod() === 'POST') {
@@ -46,12 +56,11 @@ class Auth extends BaseController
                 ],
                 'password' => [
                     'label' => 'Password',
-                    'rules' => 'required|min_length[8]|max_length[255]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/]',
+                    'rules' => 'required|min_length[8]|max_length[255]',
                     'errors' => [
                         'required' => 'Password is required.',
                         'min_length' => 'Password must be at least 8 characters long.',
-                        'max_length' => 'Password cannot exceed 255 characters.',
-                        'regex_match' => 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character.'
+                        'max_length' => 'Password cannot exceed 255 characters.'
                     ]
                 ],
                 'password_confirm' => [
@@ -121,11 +130,11 @@ class Auth extends BaseController
 
         return view('auth/register');
     }
-
+    
     public function login()
     {
         // If user is already logged in, redirect to dashboard
-        if ($this->isLoggedIn()) {
+        if (session()->has('isLoggedIn')) {
             return redirect()->to('/dashboard');
         }
         
@@ -155,62 +164,28 @@ class Auth extends BaseController
                 // Check if user exists
                 $builder = $db->table('users');
                 $user = $builder->where('email', $email)
-                              ->where('is_active', 1) // Only allow active users
                               ->get()
                               ->getRowArray();
 
                 if ($user && password_verify($password, $user['password'])) {
-                    // Check if the account is locked due to too many failed attempts
-                    if (!empty($user['locked_until']) && strtotime($user['locked_until']) > time()) {
-                        $timeLeft = ceil((strtotime($user['locked_until']) - time()) / 60);
-                        return redirect()->back()
-                                       ->withInput()
-                                       ->with('error', "Account locked. Please try again in {$timeLeft} minutes.");
-                    }
-                    
-                    // Reset failed login attempts on successful login
-                    $db->table('users')
-                      ->where('id', $user['id'])
-                      ->update(['login_attempts' => 0, 'locked_until' => null]);
-                    
                     // Create user session data
                     $userData = [
                         'userID' => $user['id'],
                         'name' => $user['name'],
                         'email' => $user['email'],
                         'role' => $user['role'],
-                        'isLoggedIn' => true,
-                        'last_activity' => time()
+                        'isLoggedIn' => true
                     ];
                     
                     // Set session data
                     $session = session();
                     $session->set($userData);
                     
-                    // Regenerate session ID to prevent session fixation
-                    $session->regenerate(true);
-                    
-                    // Update last login time in database
-                    $db->table('users')
-                       ->where('id', $user['id'])
-                       ->update(['last_login' => date('Y-m-d H:i:s')]);
-                    
-                    // Log the login
-                    $this->logLogin($user['id'], true);
-                    
-                    // Get redirect URL (either from session or default to dashboard)
-                    $redirectUrl = $session->get('redirect') ?? '/dashboard';
-                    if ($session->has('redirect')) {
-                        $session->remove('redirect');
-                    }
-                    
-                    // Set success message and redirect
+                    // No need to update last login as the column doesn't exist
+                    // Set welcome message and redirect to dashboard
                     $session->setFlashdata('success', 'Welcome back, ' . esc($user['name']) . '!');
-                    return redirect()->to($redirectUrl);
+                    return redirect()->to('/dashboard');
                 } else {
-                    // Handle failed login attempt
-                    $this->handleFailedLogin($user ? $user['id'] : null, $email);
-                    
                     // Generic error message to prevent user enumeration
                     return redirect()->back()
                                    ->withInput()
@@ -223,138 +198,26 @@ class Auth extends BaseController
             }
         }
 
-        $data = [
-            'title' => 'Login',
-            'validation' => $this->validator ?? null
-        ];
-        
-        return $this->render('auth/login', $data);
+        return view('auth/login');
     }
 
     public function logout()
     {
+        // Store the success message before destroying the session
+        session()->setFlashdata('success', 'You have been logged out successfully.');
+        
         // Destroy the session
         session()->destroy();
-        session()->setFlashdata('success', 'You have been logged out successfully.');
+        
         return redirect()->to('/login');
     }
 
     /**
-     * Handle failed login attempts
+     * Check if user is logged in
      */
-    protected function handleFailedLogin($userId = null, $email = '')
+    protected function isLoggedIn()
     {
-        $db = \Config\Database::connect();
-        
-        if ($userId) {
-            // Increment failed login attempts
-            $db->table('users')
-              ->where('id', $userId)
-              ->set('login_attempts', 'login_attempts + 1', false)
-              ->update();
-            
-            // Get current attempt count
-            $user = $db->table('users')
-                      ->select('login_attempts')
-                      ->where('id', $userId)
-                      ->get()
-                      ->getRowArray();
-            
-            $maxAttempts = 5; // Maximum allowed attempts
-            $lockoutMinutes = 15; // Lockout time in minutes
-            
-            // Lock account if max attempts reached
-            if ($user && $user['login_attempts'] >= $maxAttempts) {
-                $lockoutTime = date('Y-m-d H:i:s', strtotime("+{$lockoutMinutes} minutes"));
-                $db->table('users')
-                  ->where('id', $userId)
-                  ->update(['locked_until' => $lockoutTime]);
-                
-                // Log the lockout
-                $this->logLogin($userId, false, 'Account locked due to too many failed attempts');
-            } else {
-                // Log the failed attempt
-                $this->logLogin($userId, false, 'Invalid password');
-            }
-        } else {
-            // Log failed login attempt with non-existent email (to prevent user enumeration)
-            $this->logLogin(null, false, 'Invalid email', $email);
-        }
-    }
-    
-    /**
-     * Log login attempts
-     */
-    protected function logLogin($userId = null, $success = false, $notes = '', $email = '')
-    {
-        $db = \Config\Database::connect();
-        
-        // Get the email from post data if not provided
-        if (empty($email) && $this->request->getMethod() === 'post') {
-            $email = $this->request->getPost('email');
-        }
-        
-        $data = [
-            'user_id' => $userId,
-            'email' => $email ?: 'unknown@example.com',
-            'ip_address' => $this->request->getIPAddress() ?: '0.0.0.0',
-            'user_agent' => $this->request->getUserAgent()->getAgentString() ?: 'Unknown',
-            'success' => $success ? 1 : 0,
-            'notes' => $notes ?: ($success ? 'Successful login' : 'Failed login attempt'),
-            'created_at' => date('Y-m-d H:i:s')
-        ];
-        
-        try {
-            $db->table('login_attempts')->insert($data);
-        } catch (\Exception $e) {
-            log_message('error', 'Failed to log login attempt: ' . $e->getMessage());
-        }
-    }
-    
-    /**
-     * Set secure session cookie parameters
-     */
-    protected function setSecureSessionCookie()
-    {
-        try {
-            // Get config instances with fallbacks
-            $appConfig = config('App');
-            $sessionConfig = config('Session');
-            
-            // Get the response service
-            $response = service('response');
-            $session = session();
-            
-            // Get session ID
-            $sessionId = $session->getSessionID();
-            
-            if (empty($sessionId)) {
-                log_message('error', 'Failed to get session ID in setSecureSessionCookie');
-                return false;
-            }
-            
-            // Set cookie parameters with secure defaults
-            $cookieParams = [
-                'expires'  => $sessionConfig->expiration ? (time() + $sessionConfig->expiration) : 0,
-                'path'     => $appConfig->cookiePath ?? '/',
-                'domain'   => $appConfig->cookieDomain ?? '',
-                'secure'   => $appConfig->cookieSecure ?? false,
-                'httponly' => true, // JavaScript cannot access the cookie
-                'samesite' => $sessionConfig->samesite ?? 'Lax',
-            ];
-            
-            // Set the secure cookie using the response object
-            $response->setCookie(
-                $sessionConfig->cookieName ?? 'ci_session',
-                $sessionId,
-                $cookieParams
-            );
-            
-            return true;
-        } catch (\Exception $e) {
-            log_message('error', 'Error in setSecureSessionCookie: ' . $e->getMessage());
-            return false;
-        }
+        return session()->has('isLoggedIn');
     }
     
     /**
@@ -362,89 +225,23 @@ class Auth extends BaseController
      */
     public function dashboard()
     {
-        // This will automatically redirect to login if not authenticated
-        $this->requireLogin();
+        // Check if user is logged in
+        if (!$this->isLoggedIn()) {
+            return redirect()->to('/login');
+        }
         
-        $db = \Config\Database::connect();
-        $userId = $this->userData['id'];
-        $role = $this->userData['role'];
-        
+        // Get user data from session
         $data = [
-            'title' => 'Dashboard',
-            'user' => $this->userData
+            'user' => [
+                'id' => session()->get('userID'),
+                'name' => session()->get('name'),
+                'email' => session()->get('email'),
+                'role' => session()->get('role')
+            ],
+            'title' => 'Dashboard'
         ];
-
-        // Add role-specific data
-        switch ($role) {
-            case 'admin':
-                // Get admin-specific data
-                $data['stats'] = [
-                    'total_users' => $db->table('users')->countAllResults(),
-                    'total_courses' => $db->table('courses')->countAllResults(),
-                    'total_enrollments' => $db->table('enrollments')->countAllResults(),
-                    'recent_users' => $db->table('users')
-                                      ->orderBy('created_at', 'DESC')
-                                      ->limit(5)
-                                      ->get()
-                                      ->getResultArray()
-                ];
-                break;
-                
-            case 'teacher':
-                // Get teacher-specific data
-                $data['courses'] = $db->table('courses')
-                    ->where('teacher_id', $userId)
-                    ->countAllResults();
-                    
-                $data['students'] = $db->table('enrollments')
-                    ->select('enrollments.student_id')
-                    ->join('courses', 'courses.id = enrollments.course_id')
-                    ->where('courses.teacher_id', $userId)
-                    ->groupBy('enrollments.student_id')
-                    ->countAllResults();
-                    
-                $data['recent_courses'] = $db->table('courses')
-                    ->where('teacher_id', $userId)
-                    ->orderBy('created_at', 'DESC')
-                    ->limit(3)
-                    ->get()
-                    ->getResultArray();
-                break;
-                
-            case 'student':
-                // Get student-specific data
-                $data['enrolled_courses'] = $db->table('enrollments')
-                    ->where('student_id', $userId)
-                    ->countAllResults();
-                    
-                $data['completed_lessons'] = $db->table('user_progress')
-                    ->where('student_id', $userId)
-                    ->where('completed', 1)
-                    ->countAllResults();
-                    
-                $data['recent_courses'] = $db->table('enrollments')
-                    ->select('courses.*')
-                    ->join('courses', 'courses.id = enrollments.course_id')
-                    ->where('enrollments.student_id', $userId)
-                    ->orderBy('enrollments.enrolled_at', 'DESC')
-                    ->limit(3)
-                    ->get()
-                    ->getResultArray();
-                break;
-        }
         
-        return $this->render('auth/dashboard', $data);
-
-        $role = strtolower(session()->get('role') ?? 'student');
-        
-        switch ($role) {
-            case 'admin':
-                return view('dashboard/admindashboard', $userData);
-            case 'teacher':
-                return view('dashboard/teacherdashboard', $userData);
-            case 'student':
-            default:
-                return view('dashboard/studentdashboard', $userData);
-        }
+        // Load the dashboard view
+        return view('auth/dashboard', $data);
     }
 }
