@@ -9,19 +9,19 @@
                 <div>
                     <?php if ($user['role'] === 'admin') : ?>
                         <h1 class="h3 mb-1 text-danger">
-                            <i class="fas fa-tachometer-alt me-2"></i>Admin Dashboard
+                            <i class=""></i>Home
                         </h1>
-                        <p class="text-muted mb-0">Manage the entire learning platform</p>
+                        <p class="text-muted mb-0">Control and manage the platform</p>
                     <?php elseif ($user['role'] === 'teacher') : ?>
                         <h1 class="h3 mb-1 text-danger">
-                            <i class="fas fa-chalkboard-teacher me-2"></i>Teacher Dashboard
+                            <i class=""></i>Home
                         </h1>
-                        <p class="text-muted mb-0">Manage your classes and students</p>
+                        <p class="text-muted mb-0">Handle your classes and students here</p>
                     <?php else : ?>
                         <h1 class="h3 mb-1 text-danger">
-                            <i class="fas fa-user-graduate me-2"></i>Student Dashboard
+                            <i class=""></i>Dashboard
                         </h1>
-                        <p class="text-muted mb-0">Access your courses and materials</p>
+                        <p class="text-muted mb-0">Welcome!</p>
                     <?php endif; ?>
                 </div>
                 <div class="d-flex align-items-center">
@@ -58,11 +58,11 @@
                             <div class="bg-danger bg-opacity-10 p-3 rounded-3 me-3">
                                 <i class="fas fa-users-cog text-danger" style="font-size: 1.5rem;"></i>
                             </div>
-                            <h5 class="mb-0">User Management</h5>
+                            <h5 class="mb-0">Users</h5>
                         </div>
-                        <p class="text-muted mb-3">Manage all user accounts and permissions across the platform.</p>
+                        <p class="text-muted mb-3">Add, edit, or manage user accounts</p>
                         <a href="/admin/users" class="btn btn-outline-danger w-100">
-                            <i class="fas fa-users me-1"></i> Manage Users
+                            <i class=""></i> Open Users
                         </a>
                     </div>
                 </div>
@@ -75,11 +75,11 @@
                             <div class="bg-danger bg-opacity-10 p-3 rounded-3 me-3">
                                 <i class="fas fa-book text-danger" style="font-size: 1.5rem;"></i>
                             </div>
-                            <h5 class="mb-0">Course Management</h5>
+                            <h5 class="mb-0">Courses</h5>
                         </div>
-                        <p class="text-muted mb-3">Create, edit, and manage all courses and their content.</p>
+                        <p class="text-muted mb-3">Create and manage courses</p>
                         <a href="/admin/courses" class="btn btn-outline-danger w-100">
-                            <i class="fas fa-cog me-1"></i> Manage Courses
+                            <i class=""></i> Open Courses
                         </a>
                     </div>
                 </div>
@@ -92,11 +92,11 @@
                             <div class="bg-danger bg-opacity-10 p-3 rounded-3 me-3">
                                 <i class="fas fa-chart-line text-danger" style="font-size: 1.5rem;"></i>
                             </div>
-                            <h5 class="mb-0">System Analytics</h5>
+                            <h5 class="mb-0">Reports</h5>
                         </div>
-                        <p class="text-muted mb-3">View system-wide analytics and generate reports.</p>
+                        <p class="text-muted mb-3">Check reports and stats</p>
                         <a href="/admin/analytics" class="btn btn-outline-danger w-100">
-                            <i class="fas fa-chart-bar me-1"></i> View Analytics
+                            <i class=""></i> Open Reports
                         </a>
                     </div>
                 </div>
@@ -113,11 +113,11 @@
                             <div class="bg-danger bg-opacity-10 p-3 rounded-3 me-3">
                                 <i class="fas fa-chalkboard text-danger" style="font-size: 1.5rem;"></i>
                             </div>
-                            <h5 class="mb-0">My Classes</h5>
+                            <h5 class="mb-0">Classes</h5>
                         </div>
-                        <p class="text-muted mb-3">Access and manage all your classes and teaching materials.</p>
+                        <p class="text-muted mb-3">View and manage your classes</p>
                         <a href="/teacher/classes" class="btn btn-outline-danger w-100">
-                            <i class="fas fa-eye me-1"></i> View Classes
+                            <i class=""></i> Open Classes
                         </a>
                     </div>
                 </div>
@@ -130,11 +130,11 @@
                             <div class="bg-danger bg-opacity-10 p-3 rounded-3 me-3">
                                 <i class="fas fa-tasks text-danger" style="font-size: 1.5rem;"></i>
                             </div>
-                            <h5 class="mb-0">Gradebook</h5>
+                            <h5 class="mb-0">Grades</h5>
                         </div>
-                        <p class="text-muted mb-3">Manage student grades and assignments in one place.</p>
+                        <p class="text-muted mb-3">Check and update student grades</p>
                         <a href="/teacher/gradebook" class="btn btn-outline-danger w-100">
-                            <i class="fas fa-graduation-cap me-1"></i> View Gradebook
+                            <i class=""></i> Open Grades
                         </a>
                     </div>
                 </div>
@@ -150,13 +150,13 @@
                         <div class="row align-items-center">
                             <div class="col-md-8">
                                 <h5 class="card-title text-danger">
-                                    <i class="fas fa-book-open me-2"></i>My Courses
+                                    <i class=""></i>Courses
                                 </h5>
-                                <p class="text-muted mb-3 mb-md-0">Access your enrolled courses and learning materials. Continue your learning journey now.</p>
+                                <p class="text-muted mb-3 mb-md-0">See your enrolled subjects and lessons here.</p>
                             </div>
                             <div class="col-md-4 text-md-end">
                                 <a href="/student/courses" class="btn btn-danger">
-                                    <i class="fas fa-graduation-cap me-1"></i> View My Courses
+                                    <i class=""></i> View
                                 </a>
                             </div>
                         </div>

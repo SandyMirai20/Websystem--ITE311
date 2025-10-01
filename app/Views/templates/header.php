@@ -164,24 +164,21 @@ $userRole = session()->get('role') ?? 'guest';
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-danger text-white" id="sidebar-wrapper">
-            <div class="sidebar-heading p-3 d-flex justify-content-between align-items-center">
-                <a href="<?= base_url() ?>" class="text-white text-decoration-none d-flex align-items-center">
-                    <i class="fas fa-graduation-cap me-2"></i>
-                    <span class="fw-bold">LMS System</span>
+            <div class="p-3 text-center">
+                <a href="<?= base_url() ?>" class="text-white text-decoration-none">
+                    <h4 class="m-0">ITE</h4>
                 </a>
-                    <i class="fas fa-bars"></i>
-                </button>
             </div>
             <div class="list-group list-group-flush">
                 <?php if ($isLoggedIn): ?>
                     <a href="<?= base_url('dashboard') ?>" class="list-group-item list-group-item-action text-white" style="background-color: var(--primary-color); border-color: rgba(255,255,255,0.1);">
-                        <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                        <i class="fas fa-home me-2"></i> Home
                     </a>
                     
                     <?php if ($userRole === 'admin'): ?>
                         <!-- Admin Menu Items -->
-                        <a class="list-group-item list-group-item-action bg-dark text-white" data-bs-toggle="collapse" href="#adminMenu" role="button" aria-expanded="false" aria-controls="adminMenu">
-                            <i class="fas fa-user-shield me-2"></i> Admin <i class="fas fa-chevron-down float-end mt-1"></i>
+                        <a class="list-group-item list-group-item-action text-white" style="background-color: var(--primary-color); border-color: rgba(255,255,255,0.1);" data-bs-toggle="collapse" href="#adminMenu" role="button" aria-expanded="false" aria-controls="adminMenu">
+                            <i class="fas fa-tools me-2"></i> Admin Tools <i class="fas fa-chevron-down float-end mt-1"></i>
                         </a>
                         <div class="collapse" id="adminMenu">
                             <a href="<?= base_url('admin/users') ?>" class="list-group-item list-group-item-action text-white ps-5" style="background-color: var(--primary-color); border-color: rgba(255,255,255,0.1);">
@@ -197,7 +194,7 @@ $userRole = session()->get('role') ?? 'guest';
                     <?php elseif ($userRole === 'teacher'): ?>
                         <!-- Teacher Menu Items -->
                         <a href="<?= base_url('teacher/courses') ?>" class="list-group-item list-group-item-action text-white" style="background-color: var(--danger-color); border-color: rgba(255,255,255,0.1);">
-                            <i class="fas fa-chalkboard-teacher me-2"></i> My Courses
+                            <i class="fas fa-chalkboard-teacher me-2"></i> Courses
                         </a>
                         <a href="<?= base_url('teacher/students') ?>" class="list-group-item list-group-item-action text-white" style="background-color: var(--danger-color); border-color: rgba(255,255,255,0.1);">
                             <i class="fas fa-user-graduate me-2"></i> Students
@@ -206,10 +203,10 @@ $userRole = session()->get('role') ?? 'guest';
                     <?php elseif ($userRole === 'student'): ?>
                         <!-- Student Menu Items -->
                         <a href="<?= base_url('student/courses') ?>" class="list-group-item list-group-item-action text-white" style="background-color: var(--danger-color); border-color: rgba(255,255,255,0.1);">
-                            <i class="fas fa-book-open me-2"></i> My Learning
+                            <i class="fas fa-book-open me-2"></i> Courses
                         </a>
                         <a href="<?= base_url('student/progress') ?>" class="list-group-item list-group-item-action text-white" style="background-color: var(--danger-color); border-color: rgba(255,255,255,0.1);">
-                            <i class="fas fa-chart-line me-2"></i> My Progress
+                            <i class="fas fa-chart-line me-2"></i> Grades
                         </a>
                     <?php endif; ?>
                     
