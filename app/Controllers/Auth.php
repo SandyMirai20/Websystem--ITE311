@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
+use App\Models\EnrollmentModel;
 class Auth extends BaseController
 {
     protected $validation;
@@ -230,15 +231,63 @@ class Auth extends BaseController
             return redirect()->to('/login');
         }
         
+        $db = \Config\Database::connect();
+        $userId = session()->get('userID');
+        $userRole = session()->get('role');
+        
+        // Initialize available and enrolled courses arrays
+        $availableCourses = [];
+        $enrolledCourses = [];
+        
+        // Only fetch courses for students
+        if ($userRole === 'student') {
+            try {
+                // First, get all courses with teacher names
+                $allCourses = $db->table('courses')
+                    ->select('courses.*, users.name as teacher_name')
+                    ->join('users', 'users.id = courses.teacher_id', 'left')
+                    ->get()
+                    ->getResultArray();
+                
+                // Get enrolled course IDs for the current student
+                $enrolledCourseIds = [];
+                $enrollmentCheck = $db->table('enrollments')
+                    ->select('course_id')
+                    ->where('student_id', $userId)
+                    ->get();
+                    
+                if ($enrollmentCheck) {
+                    $enrolledCourseIds = array_column($enrollmentCheck->getResultArray(), 'course_id');
+                }
+                
+                // Filter out enrolled courses
+                $availableCourses = array_values(array_filter($allCourses, function($course) use ($enrolledCourseIds) {
+                    return !in_array($course['id'], $enrolledCourseIds);
+                }));
+
+                // Fetch enrolled courses list for display
+                $enrollmentModel = new EnrollmentModel();
+                $enrolledCourses = $enrollmentModel->getUserEnrollments((int) $userId);
+                
+            } catch (\Exception $e) {
+                // Log the error but don't break the page
+                log_message('error', 'Error fetching courses: ' . $e->getMessage());
+                $availableCourses = [];
+                $enrolledCourses = [];
+            }
+        }
+        
         // Get user data from session
         $data = [
             'user' => [
-                'id' => session()->get('userID'),
+                'id' => $userId,
                 'name' => session()->get('name'),
                 'email' => session()->get('email'),
-                'role' => session()->get('role')
+                'role' => $userRole
             ],
-            'title' => 'Dashboard'
+            'title' => 'Dashboard',
+            'availableCourses' => $availableCourses,
+            'enrolledCourses' => $enrolledCourses
         ];
         
         // Load the dashboard view

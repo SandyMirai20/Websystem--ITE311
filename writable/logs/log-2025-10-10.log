@@ -1,0 +1,2851 @@
+DEBUG - 2025-10-10 00:37:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:37:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:37:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:37:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:38:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:38:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:38:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 00:38:11 --> CSRF token verified.
+DEBUG - 2025-10-10 00:38:11 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 00:38:11 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-10 00:38:11 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/dashboard
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => ci_session=f49650def53be86fbdcf146f2e8d2d2b; csrf_cookie_name=01bc46081e34b863f36c723175148eee
+        )
+
+)
+
+DEBUG - 2025-10-10 00:38:11 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 00:38:11 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 00:38:11 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 00:38:11 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-10 00:38:11 --> Database connection established
+DEBUG - 2025-10-10 00:38:11 --> Course query result: Array
+(
+    [id] => 1
+    [title] => qweqwe
+    [description] => 
+)
+
+DEBUG - 2025-10-10 00:38:11 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 00:38:11 --> Is already enrolled: No
+DEBUG - 2025-10-10 00:38:11 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-10 00:38:11
+)
+
+DEBUG - 2025-10-10 00:38:11 --> Direct DB insert result - Insert ID: 1
+DEBUG - 2025-10-10 00:38:11 --> DB Error: 
+DEBUG - 2025-10-10 00:38:11 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 00:38:11 --> Enrollment successful - ID: 1, User: 2, Course: 1
+DEBUG - 2025-10-10 00:38:11 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"qweqwe","description":null,"enrolled_at":"2025-10-10 00:38:11"},"debug":{"insert_id":1,"timestamp":"2025-10-10 00:38:11"},"csrf":{"token":"csrf_test_name","hash":"1644f4ade540d908c0dab0bca56996ea"}}
+DEBUG - 2025-10-10 00:38:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:38:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:38:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:39:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:39:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:39:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:39:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:39:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:40:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:42:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:42:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:42:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 00:42:09 --> CSRF token verified.
+DEBUG - 2025-10-10 00:42:09 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 00:42:09 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-10 00:42:09 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => multipart/form-data; boundary=----WebKitFormBoundaryUpKMLwyB4coo4QLg
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Csrf-Token] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Token
+            [value:protected] => 1644f4ade540d908c0dab0bca56996ea
+        )
+
+    [X-Csrf-Name] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Name
+            [value:protected] => csrf_test_name
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/dashboard
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => ci_session=f49650def53be86fbdcf146f2e8d2d2b; csrf_cookie_name=1644f4ade540d908c0dab0bca56996ea
+        )
+
+)
+
+DEBUG - 2025-10-10 00:42:09 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 00:42:09 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 00:42:09 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 00:42:09 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-10 00:42:09 --> Database connection established
+DEBUG - 2025-10-10 00:42:09 --> Course query result: Array
+(
+    [id] => 1
+    [title] => qweqwe
+    [description] => 
+)
+
+DEBUG - 2025-10-10 00:42:09 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 00:42:09 --> Is already enrolled: No
+DEBUG - 2025-10-10 00:42:09 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-10 00:42:09
+)
+
+DEBUG - 2025-10-10 00:42:09 --> Direct DB insert result - Insert ID: 2
+DEBUG - 2025-10-10 00:42:09 --> DB Error: 
+DEBUG - 2025-10-10 00:42:09 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 00:42:09 --> Enrollment successful - ID: 2, User: 2, Course: 1
+DEBUG - 2025-10-10 00:42:09 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"qweqwe","description":null,"enrolled_at":"2025-10-10 00:42:09"},"debug":{"insert_id":2,"timestamp":"2025-10-10 00:42:09"},"csrf":{"token":"csrf_test_name","hash":"aec800ab96fc6c0e3224192fe3a0b7a5"}}
+DEBUG - 2025-10-10 00:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:42:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:42:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 00:42:37 --> CSRF token verified.
+DEBUG - 2025-10-10 00:42:37 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 00:42:37 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-10 00:42:37 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => multipart/form-data; boundary=----WebKitFormBoundarycAJbgoTP7GNlmSET
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Csrf-Token] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Token
+            [value:protected] => aec800ab96fc6c0e3224192fe3a0b7a5
+        )
+
+    [X-Csrf-Name] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Name
+            [value:protected] => csrf_test_name
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/dashboard
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => ci_session=f49650def53be86fbdcf146f2e8d2d2b; csrf_cookie_name=aec800ab96fc6c0e3224192fe3a0b7a5
+        )
+
+)
+
+DEBUG - 2025-10-10 00:42:37 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 00:42:37 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 00:42:37 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 00:42:37 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-10 00:42:37 --> Database connection established
+DEBUG - 2025-10-10 00:42:37 --> Course query result: Array
+(
+    [id] => 1
+    [title] => qweqwe
+    [description] => 
+)
+
+DEBUG - 2025-10-10 00:42:37 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 00:42:37 --> Is already enrolled: No
+DEBUG - 2025-10-10 00:42:37 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-10 00:42:37
+)
+
+DEBUG - 2025-10-10 00:42:37 --> Direct DB insert result - Insert ID: 3
+DEBUG - 2025-10-10 00:42:37 --> DB Error: 
+DEBUG - 2025-10-10 00:42:37 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 00:42:37 --> Enrollment successful - ID: 3, User: 2, Course: 1
+DEBUG - 2025-10-10 00:42:37 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"qweqwe","description":null,"enrolled_at":"2025-10-10 00:42:37"},"debug":{"insert_id":3,"timestamp":"2025-10-10 00:42:37"},"csrf":{"token":"csrf_test_name","hash":"cb0bfba3c3b457ff79507966de58e16f"}}
+DEBUG - 2025-10-10 00:42:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:42:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:43:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:43:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 00:43:45 --> CSRF token verified.
+DEBUG - 2025-10-10 00:43:45 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 00:43:45 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-10 00:43:45 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => csrf_cookie_name=cb0bfba3c3b457ff79507966de58e16f; ci_session=36ce4c70b90845d7c05c3a5bd5221471
+        )
+
+)
+
+DEBUG - 2025-10-10 00:43:45 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 00:43:45 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 00:43:45 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 00:43:45 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-10 00:43:45 --> Database connection established
+DEBUG - 2025-10-10 00:43:45 --> Course query result: Array
+(
+    [id] => 1
+    [title] => qweqwe
+    [description] => 
+)
+
+DEBUG - 2025-10-10 00:43:45 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 00:43:45 --> Is already enrolled: No
+DEBUG - 2025-10-10 00:43:45 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-10 00:43:45
+)
+
+DEBUG - 2025-10-10 00:43:45 --> Direct DB insert result - Insert ID: 4
+DEBUG - 2025-10-10 00:43:45 --> DB Error: 
+DEBUG - 2025-10-10 00:43:45 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 00:43:45 --> Enrollment successful - ID: 4, User: 2, Course: 1
+DEBUG - 2025-10-10 00:43:45 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"qweqwe","description":null,"enrolled_at":"2025-10-10 00:43:45"},"debug":{"insert_id":4,"timestamp":"2025-10-10 00:43:45"},"csrf":{"token":"csrf_test_name","hash":"cd0b11ff9b27fcc799af417a6b5efe12"}}
+DEBUG - 2025-10-10 00:43:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:45:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:45:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:45:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 00:45:41 --> CSRF token verified.
+DEBUG - 2025-10-10 00:45:41 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 00:45:41 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-10 00:45:41 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => ci_session=36ce4c70b90845d7c05c3a5bd5221471; csrf_cookie_name=cd0b11ff9b27fcc799af417a6b5efe12
+        )
+
+)
+
+DEBUG - 2025-10-10 00:45:41 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 00:45:41 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 00:45:41 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 00:45:41 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-10 00:45:41 --> Database connection established
+DEBUG - 2025-10-10 00:45:41 --> Course query result: Array
+(
+    [id] => 1
+    [title] => qweqwe
+    [description] => 
+)
+
+DEBUG - 2025-10-10 00:45:41 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 00:45:41 --> Is already enrolled: No
+DEBUG - 2025-10-10 00:45:41 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-10 00:45:41
+)
+
+DEBUG - 2025-10-10 00:45:41 --> Direct DB insert result - Insert ID: 5
+DEBUG - 2025-10-10 00:45:41 --> DB Error: 
+DEBUG - 2025-10-10 00:45:41 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 00:45:41 --> Enrollment successful - ID: 5, User: 2, Course: 1
+DEBUG - 2025-10-10 00:45:41 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"qweqwe","description":null,"enrolled_at":"2025-10-10 00:45:41"},"debug":{"insert_id":5,"timestamp":"2025-10-10 00:45:41"},"csrf":{"token":"csrf_test_name","hash":"6b2c1b02720229e232d127bfe0c52df1"}}
+DEBUG - 2025-10-10 00:45:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:46:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 00:46:07 --> CSRF token verified.
+DEBUG - 2025-10-10 00:46:07 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 00:46:07 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-10 00:46:07 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => multipart/form-data; boundary=----WebKitFormBoundaryDSGCaguxrnzD8Rf9
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Csrf-Token] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Token
+            [value:protected] => 6b2c1b02720229e232d127bfe0c52df1
+        )
+
+    [X-Csrf-Name] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Name
+            [value:protected] => csrf_test_name
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/dashboard
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => ci_session=36ce4c70b90845d7c05c3a5bd5221471; csrf_cookie_name=6b2c1b02720229e232d127bfe0c52df1
+        )
+
+)
+
+DEBUG - 2025-10-10 00:46:07 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 00:46:07 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 00:46:07 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 00:46:07 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-10 00:46:07 --> Database connection established
+DEBUG - 2025-10-10 00:46:07 --> Course query result: Array
+(
+    [id] => 1
+    [title] => qweqwe
+    [description] => 
+)
+
+DEBUG - 2025-10-10 00:46:07 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 00:46:07 --> Is already enrolled: No
+DEBUG - 2025-10-10 00:46:07 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-10 00:46:07
+)
+
+DEBUG - 2025-10-10 00:46:07 --> Direct DB insert result - Insert ID: 6
+DEBUG - 2025-10-10 00:46:07 --> DB Error: 
+DEBUG - 2025-10-10 00:46:07 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 00:46:07 --> Enrollment successful - ID: 6, User: 2, Course: 1
+DEBUG - 2025-10-10 00:46:07 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"qweqwe","description":null,"enrolled_at":"2025-10-10 00:46:07"},"debug":{"insert_id":6,"timestamp":"2025-10-10 00:46:07"},"csrf":{"token":"csrf_test_name","hash":"fca5e34be0e5abe10638236892a457da"}}
+DEBUG - 2025-10-10 00:46:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:46:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:46:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:46:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:46:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:46:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:46:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:47:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:47:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:47:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 00:47:25 --> CSRF token verified.
+DEBUG - 2025-10-10 00:47:25 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 00:47:25 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-10 00:47:25 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => multipart/form-data; boundary=----WebKitFormBoundaryLTNs2odjUseUWhOX
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Csrf-Token] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Token
+            [value:protected] => fca5e34be0e5abe10638236892a457da
+        )
+
+    [X-Csrf-Name] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Name
+            [value:protected] => csrf_test_name
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/dashboard
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => ci_session=36ce4c70b90845d7c05c3a5bd5221471; csrf_cookie_name=fca5e34be0e5abe10638236892a457da
+        )
+
+)
+
+DEBUG - 2025-10-10 00:47:25 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 00:47:25 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 00:47:25 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 00:47:25 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-10 00:47:25 --> Database connection established
+DEBUG - 2025-10-10 00:47:25 --> Course query result: Array
+(
+    [id] => 1
+    [title] => qweqwe
+    [description] => 
+)
+
+DEBUG - 2025-10-10 00:47:25 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 00:47:25 --> Is already enrolled: No
+DEBUG - 2025-10-10 00:47:25 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-10 00:47:25
+)
+
+DEBUG - 2025-10-10 00:47:25 --> Direct DB insert result - Insert ID: 7
+DEBUG - 2025-10-10 00:47:25 --> DB Error: 
+DEBUG - 2025-10-10 00:47:25 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 00:47:25 --> Enrollment successful - ID: 7, User: 2, Course: 1
+DEBUG - 2025-10-10 00:47:25 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"qweqwe","description":null,"enrolled_at":"2025-10-10 00:47:25"},"debug":{"insert_id":7,"timestamp":"2025-10-10 00:47:25"},"csrf":{"token":"csrf_test_name","hash":"11b6596f42ebe7169856987999f0de31"}}
+DEBUG - 2025-10-10 00:47:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:47:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:47:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:48:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:50:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:50:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:52:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:52:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:53:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:53:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:53:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:53:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:53:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:54:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:54:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:59:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 00:59:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:01:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:02:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:02:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:02:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:02:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:02:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:03:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:04:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:04:11 --> CSRF token verified.
+DEBUG - 2025-10-10 01:04:11 --> Form data: Array
+(
+    [title] => java
+    [description] => 
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-10-10 01:04:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:04:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:04:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:04:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:04:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:04:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:04:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:04:38 --> CSRF token verified.
+DEBUG - 2025-10-10 01:04:38 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:04:38 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-10 01:04:38 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => debug-bar-state=minimized; csrf_cookie_name=60bb56898422e19eb380ccf5380414c6; ci_session=b7346ae1e1488b6a5e8a2580398dad8a
+        )
+
+)
+
+DEBUG - 2025-10-10 01:04:38 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 01:04:38 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 01:04:38 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 01:04:38 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-10 01:04:38 --> Database connection established
+DEBUG - 2025-10-10 01:04:38 --> Course query result: Array
+(
+    [id] => 1
+    [title] => java
+    [description] => 
+)
+
+DEBUG - 2025-10-10 01:04:38 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 01:04:38 --> Is already enrolled: No
+DEBUG - 2025-10-10 01:04:38 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-10 01:04:38
+)
+
+DEBUG - 2025-10-10 01:04:39 --> Direct DB insert result - Insert ID: 1
+DEBUG - 2025-10-10 01:04:39 --> DB Error: 
+DEBUG - 2025-10-10 01:04:39 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:04:39 --> Enrollment successful - ID: 1, User: 2, Course: 1
+DEBUG - 2025-10-10 01:04:39 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"java","description":null,"enrolled_at":"2025-10-10 01:04:38"},"debug":{"insert_id":1,"timestamp":"2025-10-10 01:04:38"},"csrf":{"token":"csrf_test_name","hash":"26ae3c75a848e9aca6d9517ceeefcefc"}}
+DEBUG - 2025-10-10 01:04:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:10:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:10:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:10:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:11:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:11:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:11:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:11:44 --> CSRF token verified.
+DEBUG - 2025-10-10 01:11:44 --> Form data: Array
+(
+    [title] => DATA STRUCTURES AND ALGORITHMS
+    [description] => 
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-10-10 01:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:12:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:12:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:12:44 --> CSRF token verified.
+DEBUG - 2025-10-10 01:12:44 --> Form data: Array
+(
+    [title] => ADVANCED DATABASE SYSTEMS
+    [description] => IM101
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-10-10 01:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:13:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:13:18 --> CSRF token verified.
+DEBUG - 2025-10-10 01:13:18 --> Form data: Array
+(
+    [title] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+    [description] => SIA101
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-10-10 01:13:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:13:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:13:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:13:42 --> CSRF token verified.
+DEBUG - 2025-10-10 01:13:42 --> Form data: Array
+(
+    [title] => WEB SYSTEMS AND TECHNOLOGIES
+    [description] => ITE313
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-10-10 01:13:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:13:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:14:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:14:27 --> CSRF token verified.
+DEBUG - 2025-10-10 01:14:27 --> Form data: Array
+(
+    [title] => SYSTEMS ANALYSIS AND DESIGN
+    [description] => PD312
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-10-10 01:14:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:14:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:14:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:14:48 --> CSRF token verified.
+DEBUG - 2025-10-10 01:14:48 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:14:48 --> POST data: Array
+(
+    [course_id] => 5
+)
+
+DEBUG - 2025-10-10 01:14:48 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => multipart/form-data; boundary=----WebKitFormBoundarySMGYnZDHnDmzDrvt
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Csrf-Token] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Token
+            [value:protected] => 26ae3c75a848e9aca6d9517ceeefcefc
+        )
+
+    [X-Csrf-Name] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Name
+            [value:protected] => csrf_test_name
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/dashboard
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => debug-bar-state=minimized; csrf_cookie_name=26ae3c75a848e9aca6d9517ceeefcefc; ci_session=2df7c735ad908c94fe1506e4c6b3bcf2
+        )
+
+)
+
+DEBUG - 2025-10-10 01:14:48 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 01:14:48 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 01:14:48 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 01:14:48 --> Attempting enrollment - User ID: 2, Course ID: 5
+DEBUG - 2025-10-10 01:14:48 --> Database connection established
+DEBUG - 2025-10-10 01:14:48 --> Course query result: Array
+(
+    [id] => 5
+    [title] => WEB SYSTEMS AND TECHNOLOGIES
+    [description] => ITE313
+)
+
+DEBUG - 2025-10-10 01:14:48 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 01:14:48 --> Is already enrolled: No
+DEBUG - 2025-10-10 01:14:48 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 5
+    [enrolled_at] => 2025-10-10 01:14:48
+)
+
+DEBUG - 2025-10-10 01:14:48 --> Direct DB insert result - Insert ID: 2
+DEBUG - 2025-10-10 01:14:48 --> DB Error: 
+DEBUG - 2025-10-10 01:14:48 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:14:48 --> Enrollment successful - ID: 2, User: 2, Course: 5
+DEBUG - 2025-10-10 01:14:48 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"5","title":"WEB SYSTEMS AND TECHNOLOGIES","description":"ITE313","enrolled_at":"2025-10-10 01:14:48"},"debug":{"insert_id":2,"timestamp":"2025-10-10 01:14:48"},"csrf":{"token":"csrf_test_name","hash":"ccbc98eae76aa108c278713a43ac3115"}}
+DEBUG - 2025-10-10 01:14:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:14:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:15:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:15:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:16:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:16:02 --> CSRF token verified.
+DEBUG - 2025-10-10 01:16:02 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:16:02 --> POST data: Array
+(
+    [course_id] => 2
+)
+
+DEBUG - 2025-10-10 01:16:02 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => debug-bar-state=minimized; ci_session=2df7c735ad908c94fe1506e4c6b3bcf2; csrf_cookie_name=ccbc98eae76aa108c278713a43ac3115
+        )
+
+)
+
+DEBUG - 2025-10-10 01:16:02 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 01:16:02 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 01:16:02 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 01:16:02 --> Attempting enrollment - User ID: 2, Course ID: 2
+DEBUG - 2025-10-10 01:16:02 --> Database connection established
+DEBUG - 2025-10-10 01:16:02 --> Course query result: Array
+(
+    [id] => 2
+    [title] => DATA STRUCTURES AND ALGORITHMS
+    [description] => 
+)
+
+DEBUG - 2025-10-10 01:16:02 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 01:16:02 --> Is already enrolled: No
+DEBUG - 2025-10-10 01:16:02 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 2
+    [enrolled_at] => 2025-10-10 01:16:02
+)
+
+DEBUG - 2025-10-10 01:16:02 --> Direct DB insert result - Insert ID: 3
+DEBUG - 2025-10-10 01:16:02 --> DB Error: 
+DEBUG - 2025-10-10 01:16:02 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:16:02 --> Enrollment successful - ID: 3, User: 2, Course: 2
+DEBUG - 2025-10-10 01:16:02 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"2","title":"DATA STRUCTURES AND ALGORITHMS","description":null,"enrolled_at":"2025-10-10 01:16:02"},"debug":{"insert_id":3,"timestamp":"2025-10-10 01:16:02"},"csrf":{"token":"csrf_test_name","hash":"cf6056f9210c845c11c09306c37de57f"}}
+DEBUG - 2025-10-10 01:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-10 01:18:33 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Security\Security.php on line 262.
+ 1 SYSTEMPATH\Security\Security.php(262): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('student/enroll', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-10 01:18:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-10 01:18:42 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Security\Security.php on line 262.
+ 1 SYSTEMPATH\Security\Security.php(262): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('student/enroll', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-10 01:18:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:18:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:18:53 --> CSRF token verified.
+DEBUG - 2025-10-10 01:18:53 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:18:53 --> POST data: Array
+(
+    [course_id] => 5
+)
+
+DEBUG - 2025-10-10 01:18:53 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => debug-bar-state=minimized; ci_session=2df7c735ad908c94fe1506e4c6b3bcf2; csrf_cookie_name=cf6056f9210c845c11c09306c37de57f
+        )
+
+)
+
+DEBUG - 2025-10-10 01:18:53 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 01:18:53 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 01:18:53 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 01:18:53 --> Attempting enrollment - User ID: 2, Course ID: 5
+DEBUG - 2025-10-10 01:18:53 --> Database connection established
+DEBUG - 2025-10-10 01:18:53 --> Course query result: Array
+(
+    [id] => 5
+    [title] => WEB SYSTEMS AND TECHNOLOGIES
+    [description] => ITE313
+)
+
+DEBUG - 2025-10-10 01:18:53 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 01:18:53 --> Is already enrolled: No
+DEBUG - 2025-10-10 01:18:53 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 5
+    [enrolled_at] => 2025-10-10 01:18:53
+)
+
+DEBUG - 2025-10-10 01:18:53 --> Direct DB insert result - Insert ID: 4
+DEBUG - 2025-10-10 01:18:53 --> DB Error: 
+DEBUG - 2025-10-10 01:18:53 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:18:53 --> Enrollment successful - ID: 4, User: 2, Course: 5
+DEBUG - 2025-10-10 01:18:53 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"5","title":"WEB SYSTEMS AND TECHNOLOGIES","description":"ITE313","enrolled_at":"2025-10-10 01:18:53"},"debug":{"insert_id":4,"timestamp":"2025-10-10 01:18:53"},"csrf":{"token":"csrf_test_name","hash":"d8bef75e5f6644c7b4097cbf422cae74"}}
+DEBUG - 2025-10-10 01:19:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:22:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:22:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:22:34 --> CSRF token verified.
+DEBUG - 2025-10-10 01:22:34 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:22:34 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-10 01:22:34 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => debug-bar-state=minimized; csrf_cookie_name=d8bef75e5f6644c7b4097cbf422cae74; ci_session=952bbcd3c194b9fa4766b00bec39408d
+        )
+
+)
+
+DEBUG - 2025-10-10 01:22:34 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 01:22:34 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 01:22:34 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 01:22:34 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-10 01:22:34 --> Database connection established
+DEBUG - 2025-10-10 01:22:34 --> Course query result: Array
+(
+    [id] => 1
+    [title] => java
+    [description] => 
+)
+
+DEBUG - 2025-10-10 01:22:34 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 01:22:34 --> Is already enrolled: No
+DEBUG - 2025-10-10 01:22:34 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-10 01:22:34
+)
+
+DEBUG - 2025-10-10 01:22:34 --> Direct DB insert result - Insert ID: 5
+DEBUG - 2025-10-10 01:22:34 --> DB Error: 
+DEBUG - 2025-10-10 01:22:34 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:22:34 --> Enrollment successful - ID: 5, User: 2, Course: 1
+DEBUG - 2025-10-10 01:22:34 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"java","description":null,"enrolled_at":"2025-10-10 01:22:34"},"debug":{"insert_id":5,"timestamp":"2025-10-10 01:22:34"},"csrf":{"token":"csrf_test_name","hash":"7406a4eab98528c1b7e5de3004dfd731"}}
+DEBUG - 2025-10-10 01:24:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-10 01:24:55 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Security\Security.php on line 262.
+ 1 SYSTEMPATH\Security\Security.php(262): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('student/enroll', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-10 01:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-10 01:25:18 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Security\Security.php on line 262.
+ 1 SYSTEMPATH\Security\Security.php(262): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('student/enroll', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-10 01:25:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-10 01:25:21 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Security\Security.php on line 262.
+ 1 SYSTEMPATH\Security\Security.php(262): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('student/enroll', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-10 01:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:26:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:26:17 --> CSRF token verified.
+DEBUG - 2025-10-10 01:26:17 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:26:17 --> POST data: Array
+(
+    [course_id] => 3
+)
+
+DEBUG - 2025-10-10 01:26:17 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => debug-bar-state=minimized; ci_session=952bbcd3c194b9fa4766b00bec39408d; csrf_cookie_name=7406a4eab98528c1b7e5de3004dfd731
+        )
+
+)
+
+DEBUG - 2025-10-10 01:26:17 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 01:26:17 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 01:26:17 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 01:26:17 --> Attempting enrollment - User ID: 2, Course ID: 3
+DEBUG - 2025-10-10 01:26:17 --> Database connection established
+DEBUG - 2025-10-10 01:26:17 --> Course query result: Array
+(
+    [id] => 3
+    [title] => ADVANCED DATABASE SYSTEMS
+    [description] => IM101
+)
+
+DEBUG - 2025-10-10 01:26:17 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 01:26:17 --> Is already enrolled: No
+DEBUG - 2025-10-10 01:26:17 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 3
+    [enrolled_at] => 2025-10-10 01:26:17
+)
+
+DEBUG - 2025-10-10 01:26:17 --> Direct DB insert result - Insert ID: 6
+DEBUG - 2025-10-10 01:26:17 --> DB Error: 
+DEBUG - 2025-10-10 01:26:17 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:26:17 --> Enrollment successful - ID: 6, User: 2, Course: 3
+DEBUG - 2025-10-10 01:26:17 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"3","title":"ADVANCED DATABASE SYSTEMS","description":"IM101","enrolled_at":"2025-10-10 01:26:17"},"debug":{"insert_id":6,"timestamp":"2025-10-10 01:26:17"},"csrf":{"token":"csrf_test_name","hash":"618c17038b5d9ccb7bb3873356e48df0"}}
+DEBUG - 2025-10-10 01:28:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:28:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:28:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:28:40 --> CSRF token verified.
+DEBUG - 2025-10-10 01:28:40 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:28:40 --> POST data: Array
+(
+    [course_id] => 2
+)
+
+DEBUG - 2025-10-10 01:28:40 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => debug-bar-state=minimized; csrf_cookie_name=618c17038b5d9ccb7bb3873356e48df0; ci_session=95d35cbdfd0f379142a13f618210c93d
+        )
+
+)
+
+DEBUG - 2025-10-10 01:28:40 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 01:28:40 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 01:28:40 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 01:28:40 --> Attempting enrollment - User ID: 2, Course ID: 2
+DEBUG - 2025-10-10 01:28:40 --> Database connection established
+DEBUG - 2025-10-10 01:28:40 --> Course query result: Array
+(
+    [id] => 2
+    [title] => DATA STRUCTURES AND ALGORITHMS
+    [description] => 
+)
+
+DEBUG - 2025-10-10 01:28:40 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 01:28:40 --> Is already enrolled: No
+DEBUG - 2025-10-10 01:28:40 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 2
+    [enrolled_at] => 2025-10-10 01:28:40
+)
+
+DEBUG - 2025-10-10 01:28:40 --> Direct DB insert result - Insert ID: 7
+DEBUG - 2025-10-10 01:28:40 --> DB Error: 
+DEBUG - 2025-10-10 01:28:40 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:28:40 --> Enrollment successful - ID: 7, User: 2, Course: 2
+DEBUG - 2025-10-10 01:28:40 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"2","title":"DATA STRUCTURES AND ALGORITHMS","description":null,"enrolled_at":"2025-10-10 01:28:40"},"debug":{"insert_id":7,"timestamp":"2025-10-10 01:28:40"},"csrf":{"token":"csrf_test_name","hash":"3b1861268caff3d370472a806054ea51"}}
+DEBUG - 2025-10-10 01:30:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:30:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:30:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:30:50 --> CSRF token verified.
+DEBUG - 2025-10-10 01:30:50 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:30:50 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-10 01:30:50 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => debug-bar-state=minimized; ci_session=95d35cbdfd0f379142a13f618210c93d; csrf_cookie_name=3b1861268caff3d370472a806054ea51
+        )
+
+)
+
+DEBUG - 2025-10-10 01:30:50 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 01:30:50 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 01:30:50 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 01:30:50 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-10 01:30:50 --> Database connection established
+DEBUG - 2025-10-10 01:30:50 --> Course query result: Array
+(
+    [id] => 1
+    [title] => java
+    [description] => 
+)
+
+DEBUG - 2025-10-10 01:30:50 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 01:30:50 --> Is already enrolled: No
+DEBUG - 2025-10-10 01:30:50 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-10 01:30:50
+)
+
+DEBUG - 2025-10-10 01:30:50 --> Direct DB insert result - Insert ID: 8
+DEBUG - 2025-10-10 01:30:50 --> DB Error: 
+DEBUG - 2025-10-10 01:30:50 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:30:50 --> Enrollment successful - ID: 8, User: 2, Course: 1
+DEBUG - 2025-10-10 01:30:50 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"java","description":null,"enrolled_at":"2025-10-10 01:30:50"},"debug":{"insert_id":8,"timestamp":"2025-10-10 01:30:50"},"csrf":{"token":"csrf_test_name","hash":"d175a3f44fc7c46d066ea44c7b0a77c2"}}
+DEBUG - 2025-10-10 01:32:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-10 01:32:06 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Security\Security.php on line 262.
+ 1 SYSTEMPATH\Security\Security.php(262): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('student/enroll', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-10 01:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-10 01:32:09 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Security\Security.php on line 262.
+ 1 SYSTEMPATH\Security\Security.php(262): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('student/enroll', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-10 01:32:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-10 01:32:10 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Security\Security.php on line 262.
+ 1 SYSTEMPATH\Security\Security.php(262): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('student/enroll', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-10 01:32:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-10 01:32:12 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Security\Security.php on line 262.
+ 1 SYSTEMPATH\Security\Security.php(262): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('student/enroll', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-10 01:32:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:32:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:32:37 --> CSRF token verified.
+DEBUG - 2025-10-10 01:32:37 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:32:37 --> POST data: Array
+(
+    [course_id] => 3
+)
+
+DEBUG - 2025-10-10 01:32:37 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => debug-bar-state=minimized; ci_session=95d35cbdfd0f379142a13f618210c93d; csrf_cookie_name=d175a3f44fc7c46d066ea44c7b0a77c2
+        )
+
+)
+
+DEBUG - 2025-10-10 01:32:37 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 01:32:37 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 01:32:37 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 01:32:37 --> Attempting enrollment - User ID: 2, Course ID: 3
+DEBUG - 2025-10-10 01:32:37 --> Database connection established
+DEBUG - 2025-10-10 01:32:37 --> Course query result: Array
+(
+    [id] => 3
+    [title] => ADVANCED DATABASE SYSTEMS
+    [description] => IM101
+)
+
+DEBUG - 2025-10-10 01:32:37 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 01:32:37 --> Is already enrolled: No
+DEBUG - 2025-10-10 01:32:37 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 3
+    [enrolled_at] => 2025-10-10 01:32:37
+)
+
+DEBUG - 2025-10-10 01:32:37 --> Direct DB insert result - Insert ID: 9
+DEBUG - 2025-10-10 01:32:37 --> DB Error: 
+DEBUG - 2025-10-10 01:32:37 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:32:37 --> Enrollment successful - ID: 9, User: 2, Course: 3
+DEBUG - 2025-10-10 01:32:37 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"3","title":"ADVANCED DATABASE SYSTEMS","description":"IM101","enrolled_at":"2025-10-10 01:32:37"},"debug":{"insert_id":9,"timestamp":"2025-10-10 01:32:37"},"csrf":{"token":"csrf_test_name","hash":"55e4e292c2d9961c4ae2fccd212db4e0"}}
+DEBUG - 2025-10-10 01:32:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-10 01:32:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-10 01:32:55 --> CSRF token verified.
+DEBUG - 2025-10-10 01:32:55 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:32:55 --> POST data: Array
+(
+    [course_id] => 4
+)
+
+DEBUG - 2025-10-10 01:32:55 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => debug-bar-state=minimized; ci_session=95d35cbdfd0f379142a13f618210c93d; csrf_cookie_name=55e4e292c2d9961c4ae2fccd212db4e0
+        )
+
+)
+
+DEBUG - 2025-10-10 01:32:55 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-10 01:32:55 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-10 01:32:55 --> Enroll endpoint method: POST
+DEBUG - 2025-10-10 01:32:55 --> Attempting enrollment - User ID: 2, Course ID: 4
+DEBUG - 2025-10-10 01:32:55 --> Database connection established
+DEBUG - 2025-10-10 01:32:55 --> Course query result: Array
+(
+    [id] => 4
+    [title] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+    [description] => SIA101
+)
+
+DEBUG - 2025-10-10 01:32:55 --> EnrollmentModel initialized
+DEBUG - 2025-10-10 01:32:55 --> Is already enrolled: No
+DEBUG - 2025-10-10 01:32:55 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 4
+    [enrolled_at] => 2025-10-10 01:32:55
+)
+
+DEBUG - 2025-10-10 01:32:55 --> Direct DB insert result - Insert ID: 10
+DEBUG - 2025-10-10 01:32:55 --> DB Error: 
+DEBUG - 2025-10-10 01:32:55 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-10 01:32:55 --> Enrollment successful - ID: 10, User: 2, Course: 4
+DEBUG - 2025-10-10 01:32:55 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"4","title":"SYSTEMS INTEGRATION AND ARCHITECTURE 1","description":"SIA101","enrolled_at":"2025-10-10 01:32:55"},"debug":{"insert_id":10,"timestamp":"2025-10-10 01:32:55"},"csrf":{"token":"csrf_test_name","hash":"09b40ae56d76d7bf4ef8c4f527d57f3b"}}

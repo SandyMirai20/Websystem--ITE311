@@ -143,20 +143,20 @@
 
     <?php else : ?>
         <!-- Student Dashboard -->
-        <div class="row">
+        <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm">
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-8">
                                 <h5 class="card-title text-danger">
-                                    <i class=""></i>Courses
+                                    <i class="fas fa-book me-2"></i>My Courses
                                 </h5>
-                                <p class="text-muted mb-3 mb-md-0">See your enrolled subjects and lessons here.</p>
+                                <p class="text-muted mb-3 mb-md-0">View your enrolled subjects and lessons here.</p>
                             </div>
                             <div class="col-md-4 text-md-end">
-                                <a href="/student/courses" class="btn btn-danger">
-                                    <i class=""></i> View
+                            <a href="/student/enrollcourses" class="btn btn-danger">
+                            <i class="fas fa-arrow-right me-1"></i> View All
                                 </a>
                             </div>
                         </div>
@@ -164,6 +164,224 @@
                 </div>
             </div>
         </div>
+
+        <!-- Enrolled Courses -->
+        <?php if (!empty($enrolledCourses) && is_array($enrolledCourses)): ?>
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger mb-4">
+                            <i class="fas fa-book me-2"></i>My Enrolled Courses
+                        </h5>
+                        <div class="row g-4">
+                            <?php foreach ($enrolledCourses as $course): ?>
+                                <?php if (is_array($course) && isset($course['id'])): ?>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                                <h6 class="card-title fw-bold mb-0"><?= esc($course['title'] ?? 'Untitled Course') ?></h6>
+                                                <span class="badge bg-success">
+                                                    <i class="fas fa-check-circle me-1"></i> Enrolled
+                                                </span>
+                                            </div>
+                                            <p class="card-text text-muted small mb-3">
+                                                <?= !empty($course['description']) ? esc($course['description']) : 'No description available.' ?>
+                                            </p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="badge bg-light text-dark">
+                                                    <i class="fas fa-chalkboard-teacher me-1"></i>
+                                                    <?= esc($course['teacher_name'] ?? 'No Teacher') ?>
+                                                </span>
+                                                <a href="<?= base_url('student/enrollcourses') ?>" class="btn btn-sm btn-outline-primary">
+                                                    <i class="fas fa-book-open me-1"></i> View
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+
+        <!-- Available Courses -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger mb-4">
+                            <i class="fas fa-plus-circle me-2"></i>Available Courses
+                        </h5>
+                        
+                        <?php if (!empty($availableCourses)): ?>
+                            <div class="row g-4">
+                                <?php foreach ($availableCourses as $course): ?>
+                                    <div class="col-md-6 col-lg-4">
+                                        <div class="card h-100 border-0 shadow-sm">
+                                            <div class="card-body">
+                                                <h6 class="card-title fw-bold"><?= esc($course['title']) ?></h6>
+                                                <p class="card-text text-muted small mb-3">
+                                                    <?= !empty($course['description']) ? esc($course['description']) : 'No description available.' ?>
+                                                </p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span class="badge bg-light text-dark">
+                                                        <i class="fas fa-chalkboard-teacher me-1"></i>
+                                                        <?= esc($course['teacher_name'] ?? 'No Teacher') ?>
+                                                    </span>
+                                                    <button class="btn btn-sm btn-outline-danger enroll-btn" data-course-id="<?= $course['id'] ?>">
+                                                        <i class="fas fa-plus-circle me-1"></i> Enroll
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php else: ?>
+                            <div class="text-center py-4">
+                                <div class="mb-3">
+                                    <i class="fas fa-book-open fa-3x text-muted"></i>
+                                </div>
+                                <h6 class="text-muted">No available courses at the moment</h6>
+                                <p class="small text-muted">Please check back later for new courses</p>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enroll Button Script -->
+        <script>
+        // Function to show alert messages
+        function showAlert(message, type = 'info') {
+            const alertHtml = `
+                <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                    ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `;
+            
+            // Remove any existing alerts
+            $('.alert-dismissible').alert('close');
+            
+            // Add new alert at the top of the container
+            $('.container.py-4').prepend(alertHtml);
+            
+            // Auto-dismiss after 5 seconds
+            setTimeout(() => {
+                $('.alert-dismissible').alert('close');
+            }, 5000);
+        }
+        
+        // Function to get CSRF token
+        function getCsrfToken() {
+            return {
+                name: '<?= csrf_token() ?>',
+                hash: '<?= csrf_hash() ?>'
+            };
+        }
+        
+        // Function to update CSRF token in form
+        function updateCsrfToken() {
+            const csrf = getCsrfToken();
+            $('input[name="' + csrf.name + '"]').val(csrf.hash);
+            $('meta[name="csrf-token"]').attr('content', csrf.hash);
+            return csrf;
+        }
+
+        $(document).ready(function() {
+            // Handle enroll button click
+            $(document).on('click', '.enroll-btn', function(e) {
+                e.preventDefault();
+                
+                const $button = $(this);
+                const courseId = $button.data('course-id');
+                const $card = $button.closest('.card');
+                const originalHtml = $button.html();
+                
+                if (!courseId) {
+                    showAlert('Error: Invalid course information', 'danger');
+                    return;
+                }
+                
+                // Show loading state
+                $button.prop('disabled', true).html('<span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span> Enrolling...');
+                
+                // Get and update CSRF token
+                const csrf = updateCsrfToken();
+                
+                // Prepare form data
+                const formData = new FormData();
+                formData.append('course_id', courseId);
+                formData.append(csrf.name, csrf.hash);
+                
+                // Send AJAX request
+                $.ajax({
+                    url: '<?= site_url('student/enroll') ?>',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    dataType: 'json',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'X-CSRF-TOKEN': csrf.hash,
+                        'X-CSRF-NAME': csrf.name
+                    },
+                    success: function(response) {
+                        console.log('Response:', response);
+                        
+                        if (response && response.success) {
+                            // Update UI on success
+                            $button.html('<i class="fas fa-check-circle me-1"></i> Enrolled')
+                                   .removeClass('btn-outline-danger')
+                                   .addClass('btn-success')
+                                   .prop('disabled', true);
+                            
+                            // Show success message
+                            showAlert(response.message || 'Successfully enrolled in the course!', 'success');
+                            
+                            // Update CSRF token from response
+                            if (response.csrf && response.csrf.hash) {
+                                updateCsrfToken();
+                            }
+                            
+                            // Reload the page after 1.5 seconds to reflect changes
+                            setTimeout(() => {
+                                window.location.reload();
+                            }, 1500);
+                        } else {
+                            // Show error message
+                            const errorMsg = (response && response.message) || 'Failed to enroll. Please try again.';
+                            showAlert(errorMsg, 'danger');
+                            $button.prop('disabled', false).html(originalHtml);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('AJAX Error:', status, error);
+                        let errorMsg = 'An error occurred while processing your request.';
+                        
+                        try {
+                            const response = JSON.parse(xhr.responseText);
+                            errorMsg = response.message || errorMsg;
+                        } catch (e) {
+                            errorMsg = 'Network error. Please check your connection and try again.';
+                        }
+                        
+                        showAlert(errorMsg, 'danger');
+                        $button.prop('disabled', false).html(originalHtml);
+                    }
+                });
+            });
+        });
+        </script>
     <?php endif; ?>
 </div>
 
