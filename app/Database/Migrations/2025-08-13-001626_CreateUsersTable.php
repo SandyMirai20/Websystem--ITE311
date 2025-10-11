@@ -44,7 +44,7 @@ class CreateUsersTable extends Migration
             'is_active' => [
                 'type'       => 'TINYINT',
                 'constraint' => 1,
-                'default'    => 0,
+                'default'    => 1,
                 'after'      => 'role',
             ]
         ]);

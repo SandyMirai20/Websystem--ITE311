@@ -92,14 +92,20 @@ class EnrollmentModel extends Model
      */
     public function getUserEnrollments(int $userId): array
     {
-        return $this->db->table($this->table)
-            ->select('courses.id, courses.title, courses.description, enrollments.enrolled_at, users.name as teacher_name')
+        $enrollments = $this->db->table($this->table)
+            ->select('courses.id, courses.course, courses.description, courses.teacher_id, courses.created_at, courses.updated_at, users.name as teacher_name, enrollments.enrolled_at')
             ->join('courses', 'courses.id = enrollments.course_id')
             ->join('users', 'users.id = courses.teacher_id', 'left')
             ->where('enrollments.student_id', $userId)
             ->orderBy('enrollments.enrolled_at', 'DESC')
             ->get()
             ->getResultArray();
+            
+        // Debug: Log the query and results
+        log_message('debug', 'Enrollments query: ' . $this->db->getLastQuery());
+        log_message('debug', 'Enrollments data: ' . print_r($enrollments, true));
+        
+        return $enrollments;
     }
 
     /**

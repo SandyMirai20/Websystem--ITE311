@@ -181,7 +181,7 @@
                                     <div class="card h-100 border-0 shadow-sm">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-start mb-2">
-                                                <h6 class="card-title fw-bold mb-0"><?= esc($course['title'] ?? 'Untitled Course') ?></h6>
+                                                <h6 class="card-title fw-bold mb-0"><?= esc($course['course'] ?? 'Untitled Course') ?></h6>
                                                 <span class="badge bg-success">
                                                     <i class="fas fa-check-circle me-1"></i> Enrolled
                                                 </span>
@@ -225,7 +225,7 @@
                                     <div class="col-md-6 col-lg-4">
                                         <div class="card h-100 border-0 shadow-sm">
                                             <div class="card-body">
-                                                <h6 class="card-title fw-bold"><?= esc($course['title']) ?></h6>
+                                                <h6 class="card-title fw-bold"><?= esc($course['course']) ?></h6>
                                                 <p class="card-text text-muted small mb-3">
                                                     <?= !empty($course['description']) ? esc($course['description']) : 'No description available.' ?>
                                                 </p>

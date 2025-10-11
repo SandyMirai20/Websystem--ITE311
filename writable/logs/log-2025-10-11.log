@@ -1,0 +1,4048 @@
+DEBUG - 2025-10-11 03:10:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:13:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:13:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:13:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:13:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-11 03:13:07 --> mysqli_sql_exception: Unknown column 'courses.title' in 'field list' in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `courses...', 0)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `courses...')
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `courses...')
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\app\Models\EnrollmentModel.php(101): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\Auth.php(270): App\Models\EnrollmentModel->getUserEnrollments(2)
+#6 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#7 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-10-11 03:13:07 --> Error fetching courses: Unknown column 'courses.title' in 'field list'
+DEBUG - 2025-10-11 03:13:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-11 03:13:09 --> mysqli_sql_exception: Unknown column 'courses.title' in 'field list' in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `courses...', 0)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `courses...')
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `courses...')
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\app\Models\EnrollmentModel.php(101): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\Student\Enroll.php(37): App\Models\EnrollmentModel->getUserEnrollments(2)
+#6 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(933): App\Controllers\Student\Enroll->index()
+#7 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Enroll))
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-10-11 03:13:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'courses.title' in 'field list'
+[Method: GET, Route: student/courses]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = :enrollments.student_id:
+ORDER BY `enrollments`.`enrolled_at` DESC', [...], false)
+ 2 APPPATH\Models\EnrollmentModel.php(101): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Student\Enroll.php(37): App\Models\EnrollmentModel->getUserEnrollments(2)
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student\Enroll->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Enroll))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-11 03:13:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'courses.title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = :enrollments.student_id:
+ORDER BY `enrollments`.`enrolled_at` DESC', [...], false)
+ 4 APPPATH\Models\EnrollmentModel.php(101): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Student\Enroll.php(37): App\Models\EnrollmentModel->getUserEnrollments(2)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student\Enroll->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Enroll))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-11 03:13:09 --> [Caused by] mysqli_sql_exception: Unknown column 'courses.title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = :enrollments.student_id:
+ORDER BY `enrollments`.`enrolled_at` DESC', [...], false)
+ 5 APPPATH\Models\EnrollmentModel.php(101): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Student\Enroll.php(37): App\Models\EnrollmentModel->getUserEnrollments(2)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student\Enroll->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Enroll))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:13:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:13:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:13:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:13:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:13:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:13:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:13:34 --> CSRF token verified.
+DEBUG - 2025-10-11 03:13:34 --> Form data: Array
+(
+    [title] => 
+    [description] => ITE311
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-10-11 03:13:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:14:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:14:22 --> CSRF token verified.
+DEBUG - 2025-10-11 03:14:22 --> Form data: Array
+(
+    [course] => Networking II
+    [description] => ITE311
+    [teacher_id] => 3
+)
+
+ERROR - 2025-10-11 03:14:22 --> Error creating course: Undefined array key "title"
+DEBUG - 2025-10-11 03:14:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:14:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:14:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:14:33 --> CSRF token verified.
+DEBUG - 2025-10-11 03:14:33 --> Form data: Array
+(
+    [course] => Networking II
+    [description] => ITE311
+    [teacher_id] => 3
+)
+
+ERROR - 2025-10-11 03:14:33 --> Error creating course: Undefined array key "title"
+DEBUG - 2025-10-11 03:14:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:14:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:14:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:14:58 --> CSRF token verified.
+DEBUG - 2025-10-11 03:14:58 --> Form data: Array
+(
+    [course] => Networking II
+    [description] => 123123
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-10-11 03:14:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:15:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:15:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-11 03:15:08 --> mysqli_sql_exception: Unknown column 'courses.title' in 'field list' in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `courses...', 0)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `courses...')
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `courses...')
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\app\Models\EnrollmentModel.php(101): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\Auth.php(270): App\Models\EnrollmentModel->getUserEnrollments(2)
+#6 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#7 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-10-11 03:15:08 --> Error fetching courses: Unknown column 'courses.title' in 'field list'
+DEBUG - 2025-10-11 03:15:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-11 03:15:11 --> mysqli_sql_exception: Unknown column 'courses.title' in 'field list' in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `courses...', 0)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `courses...')
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `courses...')
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\app\Models\EnrollmentModel.php(101): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\Student\Enroll.php(37): App\Models\EnrollmentModel->getUserEnrollments(2)
+#6 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(933): App\Controllers\Student\Enroll->index()
+#7 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Enroll))
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-10-11 03:15:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'courses.title' in 'field list'
+[Method: GET, Route: student/courses]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = :enrollments.student_id:
+ORDER BY `enrollments`.`enrolled_at` DESC', [...], false)
+ 2 APPPATH\Models\EnrollmentModel.php(101): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Student\Enroll.php(37): App\Models\EnrollmentModel->getUserEnrollments(2)
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student\Enroll->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Enroll))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-11 03:15:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'courses.title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = :enrollments.student_id:
+ORDER BY `enrollments`.`enrolled_at` DESC', [...], false)
+ 4 APPPATH\Models\EnrollmentModel.php(101): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Student\Enroll.php(37): App\Models\EnrollmentModel->getUserEnrollments(2)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student\Enroll->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Enroll))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-11 03:15:11 --> [Caused by] mysqli_sql_exception: Unknown column 'courses.title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses`.`id`, `courses`.`title`, `courses`.`description`, `enrollments`.`enrolled_at`, `users`.`name` as `teacher_name`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = :enrollments.student_id:
+ORDER BY `enrollments`.`enrolled_at` DESC', [...], false)
+ 5 APPPATH\Models\EnrollmentModel.php(101): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Student\Enroll.php(37): App\Models\EnrollmentModel->getUserEnrollments(2)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student\Enroll->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Enroll))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:15:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 03:15:51 --> ErrorException: Undefined array key "title"
+[Method: GET, Route: student/courses]
+in APPPATH\Views\student\enrollcourses.php on line 30.
+ 1 APPPATH\Views\student\enrollcourses.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "title"', 'C:\\xampp\\htdocs\\ITE311-GOMEZ\\app\\Views\\student\\enrollcourses.php', 30)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GOMEZ\\app\\Views\\student\\enrollcourses.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student/enrollcourses', [], true)
+ 5 APPPATH\Controllers\BaseController.php(182): view('student/enrollcourses', [...])
+ 6 APPPATH\Controllers\Student\Enroll.php(43): App\Controllers\BaseController->render('student/enrollcourses', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student\Enroll->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Enroll))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:16:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 03:16:39 --> ErrorException: Undefined array key "title"
+[Method: GET, Route: student/courses]
+in APPPATH\Views\student\enrollcourses.php on line 30.
+ 1 APPPATH\Views\student\enrollcourses.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "title"', 'C:\\xampp\\htdocs\\ITE311-GOMEZ\\app\\Views\\student\\enrollcourses.php', 30)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GOMEZ\\app\\Views\\student\\enrollcourses.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student/enrollcourses', [], true)
+ 5 APPPATH\Controllers\BaseController.php(182): view('student/enrollcourses', [...])
+ 6 APPPATH\Controllers\Student\Enroll.php(43): App\Controllers\BaseController->render('student/enrollcourses', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Student\Enroll->index()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\Enroll))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:16:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:17:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:17:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:17:20 --> CSRF token verified.
+DEBUG - 2025-10-11 03:17:20 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:17:20 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-11 03:17:20 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => csrf_cookie_name=c2222103564b1e56eb3c28fc9fbad6e4; ci_session=5c27d231cef0a344612d34e24f03dcfc
+        )
+
+)
+
+DEBUG - 2025-10-11 03:17:20 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-11 03:17:20 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-11 03:17:20 --> Enroll endpoint method: POST
+DEBUG - 2025-10-11 03:17:20 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-11 03:17:20 --> Database connection established
+ERROR - 2025-10-11 03:17:20 --> mysqli_sql_exception: Unknown column 'title' in 'field list' in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `t...', 0)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(933): App\Controllers\Course->enroll()
+#6 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+#7 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-11 03:17:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'title' in 'field list'
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-11 03:17:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-11 03:17:20 --> [Caused by] mysqli_sql_exception: Unknown column 'title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:17:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 03:17:26 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Security\Security.php on line 262.
+ 1 SYSTEMPATH\Security\Security.php(262): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('student/enroll', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:17:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 03:17:28 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Security\Security.php on line 262.
+ 1 SYSTEMPATH\Security\Security.php(262): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('student/enroll', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:17:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:17:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:17:30 --> CSRF token verified.
+DEBUG - 2025-10-11 03:17:30 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:17:30 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-11 03:17:30 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => ci_session=5c27d231cef0a344612d34e24f03dcfc; csrf_cookie_name=2d8c23ae5fbead82599794f49e7ae6e5
+        )
+
+)
+
+DEBUG - 2025-10-11 03:17:30 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-11 03:17:30 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-11 03:17:30 --> Enroll endpoint method: POST
+DEBUG - 2025-10-11 03:17:30 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-11 03:17:30 --> Database connection established
+ERROR - 2025-10-11 03:17:30 --> mysqli_sql_exception: Unknown column 'title' in 'field list' in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `t...', 0)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(933): App\Controllers\Course->enroll()
+#6 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+#7 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-11 03:17:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'title' in 'field list'
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-11 03:17:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-11 03:17:30 --> [Caused by] mysqli_sql_exception: Unknown column 'title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:17:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 03:17:49 --> ErrorException: Undefined array key "title"
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 228.
+ 1 APPPATH\Views\auth\dashboard.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "title"', 'C:\\xampp\\htdocs\\ITE311-GOMEZ\\app\\Views\\auth\\dashboard.php', 228)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GOMEZ\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(297): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:17:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 03:17:53 --> ErrorException: Undefined array key "title"
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 228.
+ 1 APPPATH\Views\auth\dashboard.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "title"', 'C:\\xampp\\htdocs\\ITE311-GOMEZ\\app\\Views\\auth\\dashboard.php', 228)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GOMEZ\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(297): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:17:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 03:17:57 --> ErrorException: Undefined array key "title"
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 228.
+ 1 APPPATH\Views\auth\dashboard.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "title"', 'C:\\xampp\\htdocs\\ITE311-GOMEZ\\app\\Views\\auth\\dashboard.php', 228)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GOMEZ\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(297): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:18:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-10-11 03:18:02 --> ErrorException: Undefined array key "title"
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 228.
+ 1 APPPATH\Views\auth\dashboard.php(228): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "title"', 'C:\\xampp\\htdocs\\ITE311-GOMEZ\\app\\Views\\auth\\dashboard.php', 228)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-GOMEZ\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(297): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:18:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:19:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:19:32 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [teacher_id] => 3
+            [course] => 
+            [description] => 123123
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:19:32 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:19:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:19:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:19:36 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [teacher_id] => 3
+            [course] => 
+            [description] => 123123
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:19:36 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:19:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:19:43 --> Enrollments query: SELECT `courses`.*, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:19:43 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:19:45 --> Enrollments query: SELECT `courses`.*, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:19:45 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:19:45 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [teacher_id] => 3
+            [course] => 
+            [description] => 123123
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:19:45 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:21:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:21:08 --> Enrollments query: SELECT `courses`.*, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:21:08 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:21:08 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [teacher_id] => 3
+            [course] => 
+            [description] => 123123
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:21:08 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:21:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:21:09 --> Enrollments query: SELECT `courses`.*, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:21:09 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:21:09 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [teacher_id] => 3
+            [course] => 
+            [description] => 123123
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:21:09 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:21:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:21:10 --> Enrollments query: SELECT `courses`.*, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:21:10 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:21:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:21:12 --> CSRF token verified.
+DEBUG - 2025-10-11 03:21:12 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:21:12 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-11 03:21:12 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => csrf_cookie_name=76d9b58e2b92ab630efc5f442622a40e; ci_session=48696a75ae13c121d7f7eb413656aca6
+        )
+
+)
+
+DEBUG - 2025-10-11 03:21:12 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-11 03:21:12 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-11 03:21:12 --> Enroll endpoint method: POST
+DEBUG - 2025-10-11 03:21:12 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-11 03:21:12 --> Database connection established
+ERROR - 2025-10-11 03:21:12 --> mysqli_sql_exception: Unknown column 'title' in 'field list' in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `t...', 0)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(933): App\Controllers\Course->enroll()
+#6 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+#7 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-11 03:21:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'title' in 'field list'
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-11 03:21:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-11 03:21:12 --> [Caused by] mysqli_sql_exception: Unknown column 'title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:21:45 --> Enrollments query: SELECT `courses`.*, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:21:45 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:21:46 --> Enrollments query: SELECT `courses`.*, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:21:46 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:21:46 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:21:46 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:21:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:21:50 --> CSRF token verified.
+DEBUG - 2025-10-11 03:21:50 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:21:50 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-11 03:21:50 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => multipart/form-data; boundary=----WebKitFormBoundaryKqJoWRAAWN5L7HSB
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Csrf-Token] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Token
+            [value:protected] => 319f6f208910021a79796a01206625a6
+        )
+
+    [X-Csrf-Name] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Name
+            [value:protected] => csrf_test_name
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/dashboard
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => ci_session=48696a75ae13c121d7f7eb413656aca6; csrf_cookie_name=319f6f208910021a79796a01206625a6
+        )
+
+)
+
+DEBUG - 2025-10-11 03:21:50 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-11 03:21:50 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-11 03:21:50 --> Enroll endpoint method: POST
+DEBUG - 2025-10-11 03:21:50 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-11 03:21:50 --> Database connection established
+ERROR - 2025-10-11 03:21:50 --> mysqli_sql_exception: Unknown column 'title' in 'field list' in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `t...', 0)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(933): App\Controllers\Course->enroll()
+#6 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+#7 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-11 03:21:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'title' in 'field list'
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-11 03:21:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-11 03:21:50 --> [Caused by] mysqli_sql_exception: Unknown column 'title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:22:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:22:48 --> Enrolled Course IDs: Array
+(
+)
+
+DEBUG - 2025-10-11 03:22:48 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:22:48 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:22:48 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:22:48 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:22:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:22:50 --> CSRF token verified.
+DEBUG - 2025-10-11 03:22:50 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:22:50 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-11 03:22:50 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => multipart/form-data; boundary=----WebKitFormBoundaryuBRAtLo5MvmPiUF8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Csrf-Token] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Token
+            [value:protected] => 46e902f0684e1c9a6be0c0af389fac86
+        )
+
+    [X-Csrf-Name] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Name
+            [value:protected] => csrf_test_name
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/dashboard
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => ci_session=48696a75ae13c121d7f7eb413656aca6; csrf_cookie_name=46e902f0684e1c9a6be0c0af389fac86
+        )
+
+)
+
+DEBUG - 2025-10-11 03:22:50 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-11 03:22:50 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-11 03:22:50 --> Enroll endpoint method: POST
+DEBUG - 2025-10-11 03:22:50 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-11 03:22:50 --> Database connection established
+ERROR - 2025-10-11 03:22:50 --> mysqli_sql_exception: Unknown column 'title' in 'field list' in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `t...', 0)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `t...')
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(933): App\Controllers\Course->enroll()
+#6 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+#7 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-10-11 03:22:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'title' in 'field list'
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-11 03:22:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-11 03:22:50 --> [Caused by] mysqli_sql_exception: Unknown column 'title' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `title`, `description`
+FROM `courses`
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Controllers\Course.php(82): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->enroll()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-10-11 03:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:25:50 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:25:50 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:26:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:26:02 --> Enrolled Course IDs: Array
+(
+)
+
+DEBUG - 2025-10-11 03:26:02 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:26:02 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:26:02 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:26:02 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:28:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:28:42 --> Enrolled Course IDs: Array
+(
+)
+
+DEBUG - 2025-10-11 03:28:42 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:28:42 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:28:42 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:28:42 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:28:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:28:45 --> CSRF token verified.
+DEBUG - 2025-10-11 03:28:45 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:28:45 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-11 03:28:45 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => multipart/form-data; boundary=----WebKitFormBoundary4XOacbsYqpcwXIMx
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Csrf-Token] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Token
+            [value:protected] => 77982094d764066732cda52762a622e7
+        )
+
+    [X-Csrf-Name] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Name
+            [value:protected] => csrf_test_name
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/dashboard
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => csrf_cookie_name=77982094d764066732cda52762a622e7; ci_session=07f265dca613fe5ea2da175b7512ba24
+        )
+
+)
+
+DEBUG - 2025-10-11 03:28:45 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-11 03:28:45 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-11 03:28:45 --> Enroll endpoint method: POST
+DEBUG - 2025-10-11 03:28:45 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-11 03:28:45 --> Database connection established
+DEBUG - 2025-10-11 03:28:45 --> Course query result: Array
+(
+    [id] => 1
+    [title] => 
+    [description] => 123123
+)
+
+DEBUG - 2025-10-11 03:28:45 --> EnrollmentModel initialized
+DEBUG - 2025-10-11 03:28:45 --> Is already enrolled: No
+DEBUG - 2025-10-11 03:28:45 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-11 03:28:45
+)
+
+DEBUG - 2025-10-11 03:28:45 --> Direct DB insert result - Insert ID: 1
+DEBUG - 2025-10-11 03:28:45 --> DB Error: 
+DEBUG - 2025-10-11 03:28:45 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:28:45 --> Enrollment successful - ID: 1, User: 2, Course: 1
+DEBUG - 2025-10-11 03:28:45 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"","description":"123123","enrolled_at":"2025-10-11 03:28:45"},"debug":{"insert_id":1,"timestamp":"2025-10-11 03:28:45"},"csrf":{"token":"csrf_test_name","hash":"2b15fe5e4cb700f4afa479ef4b87dbc8"}}
+DEBUG - 2025-10-11 03:28:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:28:47 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+)
+
+DEBUG - 2025-10-11 03:28:47 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:28:47 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:28:45
+        )
+
+)
+
+DEBUG - 2025-10-11 03:28:47 --> Available Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:28:47 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:28:45
+        )
+
+)
+
+DEBUG - 2025-10-11 03:29:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:29:15 --> Enrolled Course IDs: Array
+(
+)
+
+DEBUG - 2025-10-11 03:29:15 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:29:15 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:29:15 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:29:15 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:29:17 --> CSRF token verified.
+DEBUG - 2025-10-11 03:29:17 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:29:17 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-11 03:29:17 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => multipart/form-data; boundary=----WebKitFormBoundaryWDHiPFUA8BApqb2n
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Csrf-Token] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Token
+            [value:protected] => 2b15fe5e4cb700f4afa479ef4b87dbc8
+        )
+
+    [X-Csrf-Name] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Name
+            [value:protected] => csrf_test_name
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/dashboard
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => ci_session=07f265dca613fe5ea2da175b7512ba24; csrf_cookie_name=2b15fe5e4cb700f4afa479ef4b87dbc8
+        )
+
+)
+
+DEBUG - 2025-10-11 03:29:17 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-11 03:29:17 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-11 03:29:17 --> Enroll endpoint method: POST
+DEBUG - 2025-10-11 03:29:17 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-11 03:29:17 --> Database connection established
+DEBUG - 2025-10-11 03:29:18 --> Course query result: Array
+(
+    [id] => 1
+    [title] => 
+    [description] => 123123
+)
+
+DEBUG - 2025-10-11 03:29:18 --> EnrollmentModel initialized
+DEBUG - 2025-10-11 03:29:18 --> Is already enrolled: No
+DEBUG - 2025-10-11 03:29:18 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-11 03:29:18
+)
+
+DEBUG - 2025-10-11 03:29:18 --> Direct DB insert result - Insert ID: 2
+DEBUG - 2025-10-11 03:29:18 --> DB Error: 
+DEBUG - 2025-10-11 03:29:18 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:29:18 --> Enrollment successful - ID: 2, User: 2, Course: 1
+DEBUG - 2025-10-11 03:29:18 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"","description":"123123","enrolled_at":"2025-10-11 03:29:18"},"debug":{"insert_id":2,"timestamp":"2025-10-11 03:29:18"},"csrf":{"token":"csrf_test_name","hash":"aebc4942614e9a29bde644d22f056da0"}}
+DEBUG - 2025-10-11 03:29:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:29:19 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+)
+
+DEBUG - 2025-10-11 03:29:19 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:29:19 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:29:18
+        )
+
+)
+
+DEBUG - 2025-10-11 03:29:19 --> Available Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:29:19 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:29:18
+        )
+
+)
+
+DEBUG - 2025-10-11 03:29:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:29:36 --> Enrolled Course IDs: Array
+(
+)
+
+DEBUG - 2025-10-11 03:29:36 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:29:36 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:29:36 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:29:36 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:29:49 --> Enrolled Course IDs: Array
+(
+)
+
+DEBUG - 2025-10-11 03:29:49 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:29:49 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:29:49 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:29:49 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:29:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:29:52 --> CSRF token verified.
+DEBUG - 2025-10-11 03:29:52 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:29:52 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-11 03:29:52 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => multipart/form-data; boundary=----WebKitFormBoundarykHTWQZhAtRNOBVgR
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Csrf-Token] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Token
+            [value:protected] => aebc4942614e9a29bde644d22f056da0
+        )
+
+    [X-Csrf-Name] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Name
+            [value:protected] => csrf_test_name
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/dashboard
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => ci_session=07f265dca613fe5ea2da175b7512ba24; csrf_cookie_name=aebc4942614e9a29bde644d22f056da0
+        )
+
+)
+
+DEBUG - 2025-10-11 03:29:52 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-11 03:29:52 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-11 03:29:52 --> Enroll endpoint method: POST
+DEBUG - 2025-10-11 03:29:52 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-11 03:29:52 --> Database connection established
+DEBUG - 2025-10-11 03:29:52 --> Course query result: Array
+(
+    [id] => 1
+    [title] => 
+    [description] => 123123
+)
+
+DEBUG - 2025-10-11 03:29:52 --> EnrollmentModel initialized
+DEBUG - 2025-10-11 03:29:52 --> Is already enrolled: No
+DEBUG - 2025-10-11 03:29:52 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-11 03:29:52
+)
+
+DEBUG - 2025-10-11 03:29:52 --> Direct DB insert result - Insert ID: 3
+DEBUG - 2025-10-11 03:29:52 --> DB Error: 
+DEBUG - 2025-10-11 03:29:52 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:29:52 --> Enrollment successful - ID: 3, User: 2, Course: 1
+DEBUG - 2025-10-11 03:29:52 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"","description":"123123","enrolled_at":"2025-10-11 03:29:52"},"debug":{"insert_id":3,"timestamp":"2025-10-11 03:29:52"},"csrf":{"token":"csrf_test_name","hash":"d5286dc34d79e62971edc20a8a98ff78"}}
+DEBUG - 2025-10-11 03:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:29:53 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+)
+
+DEBUG - 2025-10-11 03:29:53 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:29:53 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:29:52
+        )
+
+)
+
+DEBUG - 2025-10-11 03:29:53 --> Available Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:29:53 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:29:52
+        )
+
+)
+
+DEBUG - 2025-10-11 03:30:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:30:04 --> Enrolled Course IDs: Array
+(
+)
+
+DEBUG - 2025-10-11 03:30:05 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:30:05 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:30:05 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:30:05 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:30:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:30:09 --> CSRF token verified.
+DEBUG - 2025-10-11 03:30:09 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:30:09 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-11 03:30:09 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => multipart/form-data; boundary=----WebKitFormBoundaryUAVK2OLjluuKAdV9
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Csrf-Token] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Token
+            [value:protected] => d5286dc34d79e62971edc20a8a98ff78
+        )
+
+    [X-Csrf-Name] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Name
+            [value:protected] => csrf_test_name
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/dashboard
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => ci_session=07f265dca613fe5ea2da175b7512ba24; csrf_cookie_name=d5286dc34d79e62971edc20a8a98ff78
+        )
+
+)
+
+DEBUG - 2025-10-11 03:30:09 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-11 03:30:09 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-11 03:30:09 --> Enroll endpoint method: POST
+DEBUG - 2025-10-11 03:30:09 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-11 03:30:09 --> Database connection established
+DEBUG - 2025-10-11 03:30:09 --> Course query result: Array
+(
+    [id] => 1
+    [title] => 
+    [description] => 123123
+)
+
+DEBUG - 2025-10-11 03:30:09 --> EnrollmentModel initialized
+DEBUG - 2025-10-11 03:30:09 --> Is already enrolled: No
+DEBUG - 2025-10-11 03:30:09 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-11 03:30:09
+)
+
+DEBUG - 2025-10-11 03:30:09 --> Direct DB insert result - Insert ID: 4
+DEBUG - 2025-10-11 03:30:09 --> DB Error: 
+DEBUG - 2025-10-11 03:30:09 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:30:09 --> Enrollment successful - ID: 4, User: 2, Course: 1
+DEBUG - 2025-10-11 03:30:09 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"","description":"123123","enrolled_at":"2025-10-11 03:30:09"},"debug":{"insert_id":4,"timestamp":"2025-10-11 03:30:09"},"csrf":{"token":"csrf_test_name","hash":"3e78004c7f652067df683bb655ed5943"}}
+DEBUG - 2025-10-11 03:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:30:11 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+)
+
+DEBUG - 2025-10-11 03:30:11 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:30:11 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:30:09
+        )
+
+)
+
+DEBUG - 2025-10-11 03:30:11 --> Available Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:30:11 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:30:09
+        )
+
+)
+
+DEBUG - 2025-10-11 03:30:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:30:28 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:30:28 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:30:09
+        )
+
+)
+
+DEBUG - 2025-10-11 03:30:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:30:36 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:30:36 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:30:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:30:41 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:30:41 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:30:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:30:48 --> CSRF token verified.
+DEBUG - 2025-10-11 03:30:48 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:30:48 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-11 03:30:48 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/enrollcourses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => ci_session=07f265dca613fe5ea2da175b7512ba24; csrf_cookie_name=3e78004c7f652067df683bb655ed5943
+        )
+
+)
+
+DEBUG - 2025-10-11 03:30:48 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-11 03:30:48 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-11 03:30:48 --> Enroll endpoint method: POST
+DEBUG - 2025-10-11 03:30:48 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-11 03:30:48 --> Database connection established
+DEBUG - 2025-10-11 03:30:48 --> Course query result: Array
+(
+    [id] => 1
+    [title] => 
+    [description] => 123123
+)
+
+DEBUG - 2025-10-11 03:30:48 --> EnrollmentModel initialized
+DEBUG - 2025-10-11 03:30:48 --> Is already enrolled: No
+DEBUG - 2025-10-11 03:30:48 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-11 03:30:48
+)
+
+DEBUG - 2025-10-11 03:30:48 --> Direct DB insert result - Insert ID: 5
+DEBUG - 2025-10-11 03:30:48 --> DB Error: 
+DEBUG - 2025-10-11 03:30:48 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:30:48 --> Enrollment successful - ID: 5, User: 2, Course: 1
+DEBUG - 2025-10-11 03:30:48 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","title":"","description":"123123","enrolled_at":"2025-10-11 03:30:48"},"debug":{"insert_id":5,"timestamp":"2025-10-11 03:30:48"},"csrf":{"token":"csrf_test_name","hash":"95e38b30d33b36076addfdd5f5086ad3"}}
+DEBUG - 2025-10-11 03:31:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:31:40 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:31:40 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:30:48
+        )
+
+)
+
+DEBUG - 2025-10-11 03:32:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:32:22 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:32:22 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:30:48
+        )
+
+)
+
+DEBUG - 2025-10-11 03:32:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:32:30 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:32:30 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:32:34 --> CSRF token verified.
+DEBUG - 2025-10-11 03:32:34 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:32:34 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-11 03:32:34 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/enrollcourses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => ci_session=07f265dca613fe5ea2da175b7512ba24; csrf_cookie_name=95e38b30d33b36076addfdd5f5086ad3
+        )
+
+)
+
+DEBUG - 2025-10-11 03:32:34 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-11 03:32:34 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-11 03:32:34 --> Enroll endpoint method: POST
+DEBUG - 2025-10-11 03:32:34 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-11 03:32:34 --> Database connection established
+DEBUG - 2025-10-11 03:32:34 --> Course query result: Array
+(
+    [id] => 1
+    [course] => 
+    [description] => 123123
+)
+
+DEBUG - 2025-10-11 03:32:34 --> EnrollmentModel initialized
+DEBUG - 2025-10-11 03:32:34 --> Is already enrolled: No
+DEBUG - 2025-10-11 03:32:34 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-11 03:32:34
+)
+
+DEBUG - 2025-10-11 03:32:34 --> Direct DB insert result - Insert ID: 6
+DEBUG - 2025-10-11 03:32:34 --> DB Error: 
+DEBUG - 2025-10-11 03:32:34 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:32:34 --> Enrollment successful - ID: 6, User: 2, Course: 1
+DEBUG - 2025-10-11 03:32:34 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","course":"","description":"123123","enrolled_at":"2025-10-11 03:32:34"},"debug":{"insert_id":6,"timestamp":"2025-10-11 03:32:34"},"csrf":{"token":"csrf_test_name","hash":"cbeb1716f93ef024a8f4ebe7ec25d4f0"}}
+DEBUG - 2025-10-11 03:34:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:34:47 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:34:47 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:32:34
+        )
+
+)
+
+DEBUG - 2025-10-11 03:34:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:35:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:35:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:35:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:35:18 --> CSRF token verified.
+DEBUG - 2025-10-11 03:35:18 --> Form data: Array
+(
+    [course] => Networking III
+    [description] => 123
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-10-11 03:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:35:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:35:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:35:31 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+)
+
+DEBUG - 2025-10-11 03:35:31 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:35:31 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:32:34
+        )
+
+)
+
+DEBUG - 2025-10-11 03:35:31 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 2
+            [course] => Networking III
+            [description] => 123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:35:18
+            [updated_at] => 2025-10-11 03:35:18
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:35:31 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:32:34
+        )
+
+)
+
+DEBUG - 2025-10-11 03:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:35:38 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:35:38 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => 
+            [description] => 123123
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:14:58
+            [updated_at] => 2025-10-11 03:14:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:32:34
+        )
+
+)
+
+DEBUG - 2025-10-11 03:35:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:35:52 --> CSRF token verified.
+DEBUG - 2025-10-11 03:35:52 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:35:52 --> POST data: Array
+(
+    [course_id] => 2
+)
+
+DEBUG - 2025-10-11 03:35:52 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => csrf_cookie_name=cbeb1716f93ef024a8f4ebe7ec25d4f0; ci_session=b065e0e3169d6e15df66eb9b6ebb5f37
+        )
+
+)
+
+DEBUG - 2025-10-11 03:35:52 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-11 03:35:52 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-11 03:35:52 --> Enroll endpoint method: POST
+DEBUG - 2025-10-11 03:35:52 --> Attempting enrollment - User ID: 2, Course ID: 2
+DEBUG - 2025-10-11 03:35:52 --> Database connection established
+DEBUG - 2025-10-11 03:35:52 --> Course query result: Array
+(
+    [id] => 2
+    [course] => Networking III
+    [description] => 123
+)
+
+DEBUG - 2025-10-11 03:35:52 --> EnrollmentModel initialized
+DEBUG - 2025-10-11 03:35:52 --> Is already enrolled: No
+DEBUG - 2025-10-11 03:35:52 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 2
+    [enrolled_at] => 2025-10-11 03:35:52
+)
+
+DEBUG - 2025-10-11 03:35:52 --> Direct DB insert result - Insert ID: 7
+DEBUG - 2025-10-11 03:35:52 --> DB Error: 
+DEBUG - 2025-10-11 03:35:52 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:35:52 --> Enrollment successful - ID: 7, User: 2, Course: 2
+DEBUG - 2025-10-11 03:35:52 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"2","course":"Networking III","description":"123","enrolled_at":"2025-10-11 03:35:52"},"debug":{"insert_id":7,"timestamp":"2025-10-11 03:35:52"},"csrf":{"token":"csrf_test_name","hash":"fc102070e6063f262f3f01bd89386b1e"}}
+DEBUG - 2025-10-11 03:37:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:37:25 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:37:25 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:37:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:37:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:42:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-11 03:42:32 --> mysqli_sql_exception: Unknown column 'courses.course' in 'field list' in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `courses...', 0)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `courses...')
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `courses...')
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\Auth.php(249): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#6 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+ERROR - 2025-10-11 03:42:32 --> Error fetching courses: Unknown column 'courses.course' in 'field list'
+DEBUG - 2025-10-11 03:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:43:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:45:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:45:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:45:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:45:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:46:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:46:24 --> CSRF token verified.
+DEBUG - 2025-10-11 03:46:24 --> Form data: Array
+(
+    [course] => NETWORKING 2
+    [description] => NET102
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-10-11 03:46:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:46:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:47:10 --> CSRF token verified.
+DEBUG - 2025-10-11 03:47:10 --> Form data: Array
+(
+    [course] => WEB SYSTEM AND TECHNOLOGIES
+    [description] => ITE311
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-10-11 03:47:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:47:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:47:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:47:35 --> CSRF token verified.
+DEBUG - 2025-10-11 03:47:35 --> Form data: Array
+(
+    [course] => ADVANCE DATABASE SYSTEM
+    [description] => IM101
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-10-11 03:47:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:47:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:48:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:48:07 --> CSRF token verified.
+DEBUG - 2025-10-11 03:48:07 --> Form data: Array
+(
+    [course] => SYSTEMS ANALYSIS AND DESIGN
+    [description] => PD312
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-10-11 03:48:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:48:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:48:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:48:51 --> CSRF token verified.
+DEBUG - 2025-10-11 03:48:51 --> Form data: Array
+(
+    [course] => SYSTEMS INTEGRATION AND ARCHITECTURE
+    [description] => SIA101
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-10-11 03:48:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:48:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:48:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:48:58 --> Enrolled Course IDs: Array
+(
+)
+
+DEBUG - 2025-10-11 03:48:58 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:48:58 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:48:58 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => NETWORKING 2
+            [description] => NET102
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:46:24
+            [updated_at] => 2025-10-11 03:46:24
+            [teacher_name] => Jim Jamero
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:47:10
+            [updated_at] => 2025-10-11 03:47:10
+            [teacher_name] => Jim Jamero
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [course] => ADVANCE DATABASE SYSTEM
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:47:35
+            [updated_at] => 2025-10-11 03:47:35
+            [teacher_name] => Jim Jamero
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:48:07
+            [updated_at] => 2025-10-11 03:48:07
+            [teacher_name] => Jim Jamero
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:48:51
+            [updated_at] => 2025-10-11 03:48:51
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:48:58 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-10-11 03:49:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:49:11 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:49:11 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:49:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:49:24 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:49:24 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-10-11 03:49:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:49:26 --> CSRF token verified.
+DEBUG - 2025-10-11 03:49:26 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:49:26 --> POST data: Array
+(
+    [course_id] => 1
+)
+
+DEBUG - 2025-10-11 03:49:26 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => debug-bar-state=minimized; csrf_cookie_name=4430df4b6bb22ee179d0f2be86d6407f; ci_session=a1808a63a10f657e26c92ac9783755d2
+        )
+
+)
+
+DEBUG - 2025-10-11 03:49:26 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-11 03:49:26 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-11 03:49:26 --> Enroll endpoint method: POST
+DEBUG - 2025-10-11 03:49:26 --> Attempting enrollment - User ID: 2, Course ID: 1
+DEBUG - 2025-10-11 03:49:26 --> Database connection established
+DEBUG - 2025-10-11 03:49:26 --> Course query result: Array
+(
+    [id] => 1
+    [course] => NETWORKING 2
+    [description] => NET102
+)
+
+DEBUG - 2025-10-11 03:49:26 --> EnrollmentModel initialized
+DEBUG - 2025-10-11 03:49:26 --> Is already enrolled: No
+DEBUG - 2025-10-11 03:49:26 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 1
+    [enrolled_at] => 2025-10-11 03:49:26
+)
+
+DEBUG - 2025-10-11 03:49:26 --> Direct DB insert result - Insert ID: 1
+DEBUG - 2025-10-11 03:49:26 --> DB Error: 
+DEBUG - 2025-10-11 03:49:26 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:49:26 --> Enrollment successful - ID: 1, User: 2, Course: 1
+DEBUG - 2025-10-11 03:49:26 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"1","course":"NETWORKING 2","description":"NET102","enrolled_at":"2025-10-11 03:49:26"},"debug":{"insert_id":1,"timestamp":"2025-10-11 03:49:26"},"csrf":{"token":"csrf_test_name","hash":"a8db392ccfdf6fb19c32cb73e5d457e2"}}
+DEBUG - 2025-10-11 03:51:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:51:37 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:51:37 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => NETWORKING 2
+            [description] => NET102
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:46:24
+            [updated_at] => 2025-10-11 03:46:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:49:26
+        )
+
+)
+
+DEBUG - 2025-10-11 03:51:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:51:39 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+)
+
+DEBUG - 2025-10-11 03:51:39 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:51:39 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => NETWORKING 2
+            [description] => NET102
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:46:24
+            [updated_at] => 2025-10-11 03:46:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:49:26
+        )
+
+)
+
+DEBUG - 2025-10-11 03:51:39 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 2
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:47:10
+            [updated_at] => 2025-10-11 03:47:10
+            [teacher_name] => Jim Jamero
+        )
+
+    [1] => Array
+        (
+            [id] => 3
+            [course] => ADVANCE DATABASE SYSTEM
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:47:35
+            [updated_at] => 2025-10-11 03:47:35
+            [teacher_name] => Jim Jamero
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:48:07
+            [updated_at] => 2025-10-11 03:48:07
+            [teacher_name] => Jim Jamero
+        )
+
+    [3] => Array
+        (
+            [id] => 5
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:48:51
+            [updated_at] => 2025-10-11 03:48:51
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:51:39 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [course] => NETWORKING 2
+            [description] => NET102
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:46:24
+            [updated_at] => 2025-10-11 03:46:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:49:26
+        )
+
+)
+
+DEBUG - 2025-10-11 03:51:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-10-11 03:51:44 --> CSRF token verified.
+DEBUG - 2025-10-11 03:51:44 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:51:44 --> POST data: Array
+(
+    [course_id] => 3
+)
+
+DEBUG - 2025-10-11 03:51:44 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => multipart/form-data; boundary=----WebKitFormBoundarybGVfQFSLtQVLtDZo
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Csrf-Token] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Token
+            [value:protected] => a8db392ccfdf6fb19c32cb73e5d457e2
+        )
+
+    [X-Csrf-Name] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Name
+            [value:protected] => csrf_test_name
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost/ITE311-GOMEZ/dashboard
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => debug-bar-state=minimized; ci_session=a1808a63a10f657e26c92ac9783755d2; csrf_cookie_name=a8db392ccfdf6fb19c32cb73e5d457e2
+        )
+
+)
+
+DEBUG - 2025-10-11 03:51:44 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-10-11 03:51:44 --> Processing enrollment for user ID: 2
+DEBUG - 2025-10-11 03:51:44 --> Enroll endpoint method: POST
+DEBUG - 2025-10-11 03:51:44 --> Attempting enrollment - User ID: 2, Course ID: 3
+DEBUG - 2025-10-11 03:51:44 --> Database connection established
+DEBUG - 2025-10-11 03:51:44 --> Course query result: Array
+(
+    [id] => 3
+    [course] => ADVANCE DATABASE SYSTEM
+    [description] => IM101
+)
+
+DEBUG - 2025-10-11 03:51:44 --> EnrollmentModel initialized
+DEBUG - 2025-10-11 03:51:44 --> Is already enrolled: No
+DEBUG - 2025-10-11 03:51:44 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 3
+    [enrolled_at] => 2025-10-11 03:51:44
+)
+
+DEBUG - 2025-10-11 03:51:44 --> Direct DB insert result - Insert ID: 2
+DEBUG - 2025-10-11 03:51:44 --> DB Error: 
+DEBUG - 2025-10-11 03:51:44 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-10-11 03:51:44 --> Enrollment successful - ID: 2, User: 2, Course: 3
+DEBUG - 2025-10-11 03:51:44 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"3","course":"ADVANCE DATABASE SYSTEM","description":"IM101","enrolled_at":"2025-10-11 03:51:44"},"debug":{"insert_id":2,"timestamp":"2025-10-11 03:51:44"},"csrf":{"token":"csrf_test_name","hash":"dec0077c61184ec73193310f7056c9e8"}}
+DEBUG - 2025-10-11 03:51:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-11 03:51:46 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 3
+)
+
+DEBUG - 2025-10-11 03:51:46 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-10-11 03:51:46 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [course] => ADVANCE DATABASE SYSTEM
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:47:35
+            [updated_at] => 2025-10-11 03:47:35
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:51:44
+        )
+
+    [1] => Array
+        (
+            [id] => 1
+            [course] => NETWORKING 2
+            [description] => NET102
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:46:24
+            [updated_at] => 2025-10-11 03:46:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:49:26
+        )
+
+)
+
+DEBUG - 2025-10-11 03:51:46 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 2
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:47:10
+            [updated_at] => 2025-10-11 03:47:10
+            [teacher_name] => Jim Jamero
+        )
+
+    [1] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:48:07
+            [updated_at] => 2025-10-11 03:48:07
+            [teacher_name] => Jim Jamero
+        )
+
+    [2] => Array
+        (
+            [id] => 5
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:48:51
+            [updated_at] => 2025-10-11 03:48:51
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-10-11 03:51:46 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 3
+            [course] => ADVANCE DATABASE SYSTEM
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:47:35
+            [updated_at] => 2025-10-11 03:47:35
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:51:44
+        )
+
+    [1] => Array
+        (
+            [id] => 1
+            [course] => NETWORKING 2
+            [description] => NET102
+            [teacher_id] => 3
+            [created_at] => 2025-10-11 03:46:24
+            [updated_at] => 2025-10-11 03:46:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-11 03:49:26
+        )
+
+)
+

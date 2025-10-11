@@ -244,7 +244,7 @@ class Auth extends BaseController
             try {
                 // First, get all courses with teacher names
                 $allCourses = $db->table('courses')
-                    ->select('courses.*, users.name as teacher_name')
+                    ->select('courses.id, courses.course, courses.description, courses.teacher_id, courses.created_at, courses.updated_at, users.name as teacher_name')
                     ->join('users', 'users.id = courses.teacher_id', 'left')
                     ->get()
                     ->getResultArray();
@@ -252,12 +252,13 @@ class Auth extends BaseController
                 // Get enrolled course IDs for the current student
                 $enrolledCourseIds = [];
                 $enrollmentCheck = $db->table('enrollments')
-                    ->select('course_id')
-                    ->where('student_id', $userId)
+                    ->select('enrollments.course_id')
+                    ->where('enrollments.student_id', $userId)
                     ->get();
                     
                 if ($enrollmentCheck) {
                     $enrolledCourseIds = array_column($enrollmentCheck->getResultArray(), 'course_id');
+                    log_message('debug', 'Enrolled Course IDs: ' . print_r($enrolledCourseIds, true));
                 }
                 
                 // Filter out enrolled courses
@@ -268,6 +269,10 @@ class Auth extends BaseController
                 // Fetch enrolled courses list for display
                 $enrollmentModel = new EnrollmentModel();
                 $enrolledCourses = $enrollmentModel->getUserEnrollments((int) $userId);
+                
+                // Debug: Log the course data
+                log_message('debug', 'Available Courses: ' . print_r($availableCourses, true));
+                log_message('debug', 'Enrolled Courses: ' . print_r($enrolledCourses, true));
                 
             } catch (\Exception $e) {
                 // Log the error but don't break the page
@@ -289,6 +294,9 @@ class Auth extends BaseController
             'availableCourses' => $availableCourses,
             'enrolledCourses' => $enrolledCourses
         ];
+        
+        // Extract title and user for the view
+        extract($data);
         
         // Load the dashboard view
         return view('auth/dashboard', $data);
