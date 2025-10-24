@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\EnrollmentModel;
+use App\Models\MaterialModel;
 class Auth extends BaseController
 {
     protected $validation;
@@ -277,6 +278,30 @@ class Auth extends BaseController
             } catch (\Exception $e) {
                 // Log the error but don't break the page
                 log_message('error', 'Error fetching courses: ' . $e->getMessage());
+                $availableCourses = [];
+                $enrolledCourses = [];
+            }
+        } elseif ($userRole === 'teacher') {
+            try {
+                // Get courses where this teacher is assigned
+                $teacherCourses = $db->table('courses')
+                    ->select('courses.*, users.name as teacher_name')
+                    ->join('users', 'users.id = courses.teacher_id', 'left')
+                    ->where('courses.teacher_id', $userId)
+                    ->get()
+                    ->getResultArray();
+
+                // Add materials count for each course
+                $materialModel = new MaterialModel();
+                foreach ($teacherCourses as &$course) {
+                    $course['materials_count'] = $materialModel->where('course_id', $course['id'])->countAllResults();
+                }
+
+                $availableCourses = $teacherCourses;
+                $enrolledCourses = [];
+
+            } catch (\Exception $e) {
+                log_message('error', 'Error fetching teacher courses: ' . $e->getMessage());
                 $availableCourses = [];
                 $enrolledCourses = [];
             }

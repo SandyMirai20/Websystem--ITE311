@@ -164,7 +164,8 @@ class Courses extends BaseController
             $courseId = $courseModel->getInsertID();
             
             if ($courseId) {
-                return redirect()->to('/admin/courses')->with('success', 'Course created successfully!');
+                return redirect()->to('/admin/courses/show/' . $courseId)
+                    ->with('success', 'Course created successfully! You can now upload materials for this course.');
             } else {
                 throw new \Exception('Failed to create course');
             }

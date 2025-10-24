@@ -160,4 +160,57 @@ class Enroll extends BaseController
             ])->setStatusCode(500);
         }
     }
+
+    public function view($courseId = null)
+    {
+        $this->requireRole('student');
+        
+        $userId = $this->userData['id'];
+        
+        // Check if student is enrolled in this course
+        if (!$this->enrollmentModel->isAlreadyEnrolled($userId, $courseId)) {
+            return redirect()->to('/student/courses')->with('error', 'You are not enrolled in this course.');
+        }
+        
+        // Get course details with teacher info
+        $course = $this->courseModel->select('courses.*, users.name as teacher_name, users.email as teacher_email')
+            ->join('users', 'users.id = courses.teacher_id')
+            ->where('courses.id', $courseId)
+            ->first();
+            
+        if (!$course) {
+            return redirect()->to('/student/courses')->with('error', 'Course not found.');
+        }
+        
+        // Get materials for this course
+        $materialModel = new \App\Models\MaterialModel();
+        $materials = $materialModel->getMaterialsByCourse($courseId);
+        
+        return $this->render('student/course_view', [
+            'title' => 'Course: ' . $course['course'],
+            'course' => $course,
+            'materials' => $materials
+        ]);
+    }
+
+    public function enrolledCourses()
+    {
+        $this->requireRole('student');
+
+        $userId = $this->userData['id'];
+
+        // Get user's enrolled courses with materials count
+        $enrolledCourses = $this->enrollmentModel->getUserEnrollments($userId);
+
+        // Add materials count for each course
+        $materialModel = new \App\Models\MaterialModel();
+        foreach ($enrolledCourses as &$course) {
+            $course['materials_count'] = $materialModel->where('course_id', $course['id'])->countAllResults();
+        }
+
+        return $this->render('student/enrolled_courses', [
+            'title' => 'My Enrolled Courses',
+            'courses' => $enrolledCourses
+        ]);
+    }
 }

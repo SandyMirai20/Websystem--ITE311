@@ -37,6 +37,7 @@
                             <th>Course</th>
                             <th>Teacher</th>
                             <th style="width: 180px;">Created</th>
+                            <th style="width: 150px;">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,16 +46,41 @@
                                 <tr>
                                     <td class="text-muted">#<?= esc($c['id']) ?></td>
                                     <td>
-                                        <div class="fw-semibold"><?= esc($c['course']) ?></div>
-                                        <div class="small text-muted"><?= esc($c['description'] ?? '') ?></div>
+                                        <div class="fw-semibold">
+                                            <a href="<?= base_url('admin/courses/show/' . $c['id']) ?>" class="text-decoration-none">
+                                                <?= esc($c['course']) ?>
+                                            </a>
+                                        </div>
+                                        <div class="small text-muted">
+                                            <?php
+                                            // Get materials count for this course
+                                            $materialModel = new \App\Models\MaterialModel();
+                                            $materialsCount = $materialModel->where('course_id', $c['id'])->countAllResults();
+                                            ?>
+                                            <span class="badge bg-info">
+                                                <i class="fas fa-file-alt me-1"></i>
+                                                <?= $materialsCount ?> Materials
+                                            </span>
+                                            <?= esc($c['description'] ?? '') ?>
+                                        </div>
                                     </td>
                                     <td><?= esc($c['teacher_name'] ?? '—') ?></td>
                                     <td><?= !empty($c['created_at']) ? date('M j, Y g:i A', strtotime($c['created_at'])) : '—' ?></td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <a href="<?= base_url('admin/courses/show/' . $c['id']) ?>" class="btn btn-sm btn-outline-primary" title="View Details">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            <a href="<?= base_url('admin/course/' . $c['id'] . '/upload') ?>" class="btn btn-sm btn-outline-success" title="Upload Materials">
+                                                <i class="fas fa-upload"></i>
+                                            </a>
+                                        </div>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else: ?>
                             <tr>
-                                <td colspan="4" class="text-center text-muted py-4">No courses yet.</td>
+                                <td colspan="5" class="text-center text-muted py-4">No courses yet.</td>
                             </tr>
                         <?php endif; ?>
                     </tbody>

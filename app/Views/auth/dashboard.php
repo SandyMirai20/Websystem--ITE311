@@ -105,6 +105,87 @@
 
     <?php elseif ($user['role'] === 'teacher') : ?>
         <!-- Teacher Dashboard -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5 class="card-title text-danger">
+                                    <i class="fas fa-chalkboard-teacher me-2"></i>My Courses
+                                </h5>
+                                <p class="text-muted mb-3 mb-md-0">Manage your courses and upload materials here.</p>
+                            </div>
+                            <div class="col-md-4 text-md-end">
+                                <a href="/teacher/courses" class="btn btn-danger">
+                                    <i class="fas fa-arrow-right me-1"></i> View All
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teacher Courses -->
+        <?php if (!empty($availableCourses) && is_array($availableCourses)): ?>
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger mb-4">
+                            <i class="fas fa-chalkboard-teacher me-2"></i>My Teaching Courses
+                        </h5>
+                        <div class="row g-4">
+                            <?php foreach ($availableCourses as $course): ?>
+                                <?php if (is_array($course) && isset($course['id'])): ?>
+                                <div class="col-md-6 col-lg-4">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                                <h6 class="card-title fw-bold mb-0">
+                                                    <i class="fas fa-graduation-cap text-primary me-1"></i>
+                                                    <?= esc($course['course'] ?? 'Untitled Course') ?>
+                                                </h6>
+                                                <span class="badge bg-primary">
+                                                    <i class="fas fa-chalkboard-teacher me-1"></i> Teaching
+                                                </span>
+                                            </div>
+                                            <p class="card-text text-muted small mb-3">
+                                                <?= !empty($course['description']) ? esc($course['description']) : 'No description available.' ?>
+                                            </p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="badge bg-light text-dark">
+                                                    <i class="far fa-calendar-alt me-1"></i>
+                                                    <?= date('M d, Y', strtotime($course['created_at'])) ?>
+                                                </span>
+                                                <?php if (isset($course['materials_count'])): ?>
+                                                    <span class="badge bg-info">
+                                                        <i class="fas fa-file-alt me-1"></i>
+                                                        <?= $course['materials_count'] ?> Materials
+                                                    </span>
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="mt-3 d-flex gap-2">
+                                                <a href="/teacher/courses/<?= $course['id'] ?>" class="btn btn-sm btn-outline-primary flex-grow-1">
+                                                    <i class="fas fa-eye me-1"></i> View
+                                                </a>
+                                                <a href="/teacher/course/<?= $course['id'] ?>/upload" class="btn btn-sm btn-outline-success">
+                                                    <i class="fas fa-upload me-1"></i> Upload
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+
         <div class="row g-4">
             <div class="col-md-6">
                 <div class="card border-0 shadow-sm h-100">
@@ -116,13 +197,13 @@
                             <h5 class="mb-0">Classes</h5>
                         </div>
                         <p class="text-muted mb-3">View and manage your classes</p>
-                        <a href="/teacher/classes" class="btn btn-outline-danger w-100">
+                        <a href="/teacher/courses" class="btn btn-outline-danger w-100">
                             <i class=""></i> Open Classes
                         </a>
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-6">
                 <div class="card border-0 shadow-sm h-100">
                     <div class="card-body">
@@ -130,11 +211,11 @@
                             <div class="bg-danger bg-opacity-10 p-3 rounded-3 me-3">
                                 <i class="fas fa-tasks text-danger" style="font-size: 1.5rem;"></i>
                             </div>
-                            <h5 class="mb-0">Grades</h5>
+                            <h5 class="mb-0">Materials</h5>
                         </div>
-                        <p class="text-muted mb-3">Check and update student grades</p>
-                        <a href="/teacher/gradebook" class="btn btn-outline-danger w-100">
-                            <i class=""></i> Open Grades
+                        <p class="text-muted mb-3">Upload and manage course materials</p>
+                        <a href="/teacher/courses" class="btn btn-outline-danger w-100">
+                            <i class=""></i> Manage Materials
                         </a>
                     </div>
                 </div>
@@ -194,8 +275,26 @@
                                                     <i class="fas fa-chalkboard-teacher me-1"></i>
                                                     <?= esc($course['teacher_name'] ?? 'No Teacher') ?>
                                                 </span>
-                                                <a href="<?= base_url('student/enrollcourses') ?>" class="btn btn-sm btn-outline-primary">
-                                                    <i class="fas fa-book-open me-1"></i> View
+                                                <?php
+                                                // Get materials count for this course
+                                                $materialModel = new \App\Models\MaterialModel();
+                                                $materialsCount = $materialModel->where('course_id', $course['id'])->countAllResults();
+                                                ?>
+                                                <?php if ($materialsCount > 0): ?>
+                                                    <span class="badge bg-info">
+                                                        <i class="fas fa-file-alt me-1"></i>
+                                                        <?= $materialsCount ?> Materials
+                                                    </span>
+                                                <?php else: ?>
+                                                    <span class="badge bg-light text-muted">
+                                                        <i class="fas fa-file-alt me-1"></i>
+                                                        No Materials
+                                                    </span>
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="mt-2">
+                                                <a href="<?= base_url('student/courses/' . $course['id']) ?>" class="btn btn-sm btn-outline-primary">
+                                                    <i class="fas fa-download me-1"></i> View Materials
                                                 </a>
                                             </div>
                                         </div>
@@ -256,6 +355,76 @@
                 </div>
             </div>
         </div>
+
+        <!-- Quick Materials Access -->
+        <?php if (!empty($enrolledCourses) && is_array($enrolledCourses)): ?>
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger mb-4">
+                            <i class="fas fa-download me-2"></i>Course Materials
+                        </h5>
+                        <?php
+                        $totalMaterials = 0;
+                        $coursesWithMaterials = 0;
+                        foreach ($enrolledCourses as $course) {
+                            if (is_array($course) && isset($course['id'])) {
+                                $materialModel = new \App\Models\MaterialModel();
+                                $materialsCount = $materialModel->where('course_id', $course['id'])->countAllResults();
+                                $totalMaterials += $materialsCount;
+                                if ($materialsCount > 0) {
+                                    $coursesWithMaterials++;
+                                }
+                            }
+                        }
+                        ?>
+
+                        <?php if ($totalMaterials > 0): ?>
+                            <div class="row text-center mb-4">
+                                <div class="col-4">
+                                    <div class="p-3 bg-light rounded">
+                                        <i class="fas fa-book-open fa-2x text-primary mb-2"></i>
+                                        <h4 class="text-primary mb-0"><?= $coursesWithMaterials ?></h4>
+                                        <small class="text-muted">Courses with Materials</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="p-3 bg-light rounded">
+                                        <i class="fas fa-file-alt fa-2x text-success mb-2"></i>
+                                        <h4 class="text-success mb-0"><?= $totalMaterials ?></h4>
+                                        <small class="text-muted">Total Files Available</small>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="p-3 bg-light rounded">
+                                        <i class="fas fa-download fa-2x text-info mb-2"></i>
+                                        <h4 class="text-info mb-0">Ready</h4>
+                                        <small class="text-muted">For Download</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <a href="/student/enrolled-courses" class="btn btn-danger">
+                                    <i class="fas fa-eye me-1"></i> View All Course Materials
+                                </a>
+                            </div>
+                        <?php else: ?>
+                            <div class="text-center py-4">
+                                <i class="fas fa-file-alt fa-3x text-muted mb-3"></i>
+                                <h6 class="text-muted mb-2">No materials available yet</h6>
+                                <p class="text-muted small mb-3">Your teachers haven't uploaded any materials for your enrolled courses yet.</p>
+                                <div class="alert alert-info">
+                                    <i class="fas fa-info-circle me-1"></i>
+                                    Check back later or contact your teachers for course materials.
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
 
         <!-- Enroll Button Script -->
         <script>
