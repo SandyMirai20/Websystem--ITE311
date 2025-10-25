@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\EnrollmentModel;
 use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\I18n\Time;
 
 class Course extends BaseController
 {
@@ -120,7 +121,7 @@ class Course extends BaseController
             $enrollmentData = [
                 'student_id' => $userId,
                 'course_id'  => $courseId,
-                'enrolled_at' => date('Y-m-d H:i:s')
+                'enrolled_at' => Time::now()->toDateTimeString()
             ];
             
             log_message('debug', 'Attempting to enroll user with data: ' . print_r($enrollmentData, true));
@@ -174,6 +175,16 @@ class Course extends BaseController
         
         log_message('debug', sprintf('Enrollment successful - ID: %d, User: %d, Course: %d', 
             $insertId, $userId, $courseId));
+        
+        // Create notification for the student
+        try {
+            $notificationModel = new \App\Models\NotificationModel();
+            $message = "You have been enrolled in " . $course['course'];
+            $notificationModel->createNotification($userId, $message);
+            log_message('debug', 'Notification created for user ' . $userId . ': ' . $message);
+        } catch (\Exception $e) {
+            log_message('error', 'Failed to create notification: ' . $e->getMessage());
+        }
         
         $response = [
             'success' => true,

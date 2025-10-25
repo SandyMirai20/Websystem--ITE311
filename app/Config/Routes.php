@@ -27,6 +27,10 @@ $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
         $routes->post('/course/enroll', 'Course::enroll', ['filter' => 'csrf']);
         // Front-controller alias when index.php is present in path
         $routes->post('index.php/course/enroll', 'Course::enroll', ['filter' => 'csrf']);
+
+        // Notification routes
+        $routes->get('/notifications', 'Notifications::get');
+        $routes->post('/notifications/mark_read/(:num)', 'Notifications::mark_as_read/$1');
         
       
         // Admin routes

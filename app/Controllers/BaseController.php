@@ -66,6 +66,10 @@ abstract class BaseController extends Controller
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
 
+        // Set PHP timezone to match application timezone
+        $appTimezone = config('App')->appTimezone ?? 'Asia/Manila';
+        date_default_timezone_set($appTimezone);
+
         // Initialize user data from session
         $this->initializeUserData();
         
@@ -102,6 +106,14 @@ abstract class BaseController extends Controller
             'user' => $this->userData,
             'isLoggedIn' => !empty($this->userData)
         ];
+
+        // Add notification count for logged-in users
+        if (!empty($this->userData)) {
+            $notificationModel = new \App\Models\NotificationModel();
+            $this->viewData['unreadNotificationCount'] = $notificationModel->getUnreadCount($this->userData['id']);
+        } else {
+            $this->viewData['unreadNotificationCount'] = 0;
+        }
     }
     
     /**
