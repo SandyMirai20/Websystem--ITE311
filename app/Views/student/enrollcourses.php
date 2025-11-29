@@ -7,6 +7,23 @@
         <h3 class="mb-0">Available Courses</h3>
     </div>
 
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <form id="searchForm" class="d-flex">
+                <div class="input-group">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search courses..." name="search_term" value="<?= esc($searchTerm ?? '') ?>">
+                    <button class="btn btn-outline-primary" type="submit">
+                        <i class="bi bi-search"></i> Search
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="noResultsMessage" class="alert alert-info d-none">
+        No courses found matching your search.
+    </div>
+
     <?php if (session()->getFlashdata('success')): ?>
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             <?= session()->getFlashdata('success') ?>
@@ -21,11 +38,11 @@
         </div>
     <?php endif; ?>
 
-    <div class="row g-4">
+    <div id="coursesContainer" class="row g-4">
         <?php if (!empty($courses)): ?>
             <?php foreach ($courses as $course): ?>
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm">
+                    <div class="card h-100 shadow-sm course-card">
                         <div class="card-body">
                             <h5 class="card-title fw-bold"><?= esc($course['course']) ?></h5>
                             <h6 class="card-subtitle mb-2 text-muted">
@@ -122,8 +139,62 @@ function updateCsrfToken() {
     return csrf;
 }
 
-// Handle enrollment when the document is ready
+// Handle enrollment and search when the document is ready
 $(document).ready(function() {
+    // Client-side filtering
+    $('#searchInput').on('keyup', function() {
+        var value = $(this).val().toLowerCase();
+        var visibleCount = 0;
+
+        $('#coursesContainer .course-card').each(function() {
+            var text = $(this).text().toLowerCase();
+            var isMatch = text.indexOf(value) > -1;
+            $(this).closest('.col-md-6').toggle(isMatch);
+            if (isMatch) {
+                visibleCount++;
+            }
+        });
+
+        if (visibleCount === 0) {
+            $('#noResultsMessage').removeClass('d-none');
+        } else {
+            $('#noResultsMessage').addClass('d-none');
+        }
+    });
+
+    // Server-side search with AJAX
+    $('#searchForm').on('submit', function(e) {
+        e.preventDefault();
+
+        var searchTerm = $('#searchInput').val();
+        $.get('<?= site_url('student/courses/search') ?>', { search_term: searchTerm }, function(data) {
+            $('#coursesContainer').empty();
+
+            if (data && data.length > 0) {
+                $('#noResultsMessage').addClass('d-none');
+                $.each(data, function(index, course) {
+                    var courseHtml = `
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm course-card">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">${course.course}</h5>
+                                    <p class="card-text text-muted">${course.description ?? ''}</p>
+                                </div>
+                                <div class="card-footer bg-transparent">
+                                    <button class="btn btn-primary btn-sm w-100 enroll-btn" data-course-id="${course.id}">
+                                        <i class="fas fa-plus-circle me-1"></i> Enroll Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>`;
+                    $('#coursesContainer').append(courseHtml);
+                });
+            } else {
+                $('#noResultsMessage').removeClass('d-none');
+            }
+        }, 'json');
+    });
+
     // Handle enroll button click
     $(document).on('click', '.enroll-btn', function(e) {
         e.preventDefault();

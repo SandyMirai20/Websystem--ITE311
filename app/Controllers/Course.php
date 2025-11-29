@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\EnrollmentModel;
+use App\Models\CourseModel;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\I18n\Time;
 
@@ -208,5 +209,35 @@ class Course extends BaseController
         log_message('debug', 'Sending success response: ' . json_encode($response));
         
         return $this->response->setJSON($response);
+    }
+
+    public function search()
+    {
+        $searchTerm = $this->request->getGet('search_term');
+
+        if ($this->request->getMethod() === 'post') {
+            $searchTerm = $this->request->getPost('search_term');
+        }
+
+        $courseModel = new CourseModel();
+
+        if (!empty($searchTerm)) {
+            $courseModel
+                ->groupStart()
+                ->like('course', $searchTerm)
+                ->orLike('description', $searchTerm)
+                ->groupEnd();
+        }
+
+        $courses = $courseModel->findAll();
+
+        if ($this->request->isAJAX()) {
+            return $this->response->setJSON($courses);
+        }
+
+        return view('student/enrollcourses', [
+            'courses'    => $courses,
+            'searchTerm' => $searchTerm,
+        ]);
     }
 }

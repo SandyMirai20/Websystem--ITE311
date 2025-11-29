@@ -62,6 +62,10 @@ $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
             $routes->get('courses/(:num)', 'Student\Enroll::view/$1', ['as' => 'student.course.view']);
             $routes->get('enrolled-courses', 'Student\Enroll::enrolledCourses', ['as' => 'student.enrolled.courses']);
             
+            // Course search routes
+            $routes->get('courses/search', 'Course::search');
+            $routes->post('courses/search', 'Course::search');
+
             // Enrollment route - map to unified Course::enroll for compatibility
             $routes->post('enroll', 'Course::enroll', ['as' => 'student.enroll', 'filter' => 'csrf']);
             // Backward-compat endpoint sometimes used in view scripts
