@@ -183,12 +183,10 @@ class Auth extends BaseController
                     $session = session();
                     $session->set($userData);
                     
-                    // No need to update last login as the column doesn't exist
-                    // Set welcome message and redirect to dashboard
                     $session->setFlashdata('success', 'Welcome back, ' . esc($user['name']) . '!');
                     return redirect()->to('/dashboard');
                 } else {
-                    // Generic error message to prevent user enumeration
+
                     return redirect()->back()
                                    ->withInput()
                                    ->with('error', 'Invalid email or password.');
@@ -324,6 +322,18 @@ class Auth extends BaseController
         extract($data);
         
         // Load the dashboard view
-        return view('auth/dashboard', $data);
+       return $this->render('auth/dashboard', $data);
+
+        $role = strtolower(session()->get('role') ?? 'student');
+        
+        switch ($role) {
+            case 'admin':
+                return view('dashboard/admindashboard', $userData);
+            case 'teacher':
+                return view('dashboard/teacherdashboard', $userData);
+            case 'student':
+            default:
+                return view('dashboard/studentdashboard', $userData);
+        }
     }
 }

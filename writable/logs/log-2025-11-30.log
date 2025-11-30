@@ -1,0 +1,2155 @@
+DEBUG - 2025-11-30 19:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:02:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:02:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:02:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:02:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-30 19:03:17 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:202
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php(202): mysqli->real_connect('localhost', 'root', '', 'lms_gomez', 3306, '', 0)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\ITE311-GOMEZ\app\Models\NotificationModel.php(33): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\BaseController.php(113): App\Models\NotificationModel->getUnreadCount('3')
+#7 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\BaseController.php(77): App\Controllers\BaseController->setupViewData()
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+#10 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\app\Models\NotificationModel.php(33): CodeIgniter\Model->countAllResults()
+#5 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\BaseController.php(113): App\Models\NotificationModel->getUnreadCount('3')
+#6 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\BaseController.php(77): App\Controllers\BaseController->setupViewData()
+#7 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-11-30 19:03:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:', [...], false)
+ 3 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 4 APPPATH\Models\NotificationModel.php(33): CodeIgniter\Model->countAllResults()
+ 5 APPPATH\Controllers\BaseController.php(113): App\Models\NotificationModel->getUnreadCount('3')
+ 6 APPPATH\Controllers\BaseController.php(77): App\Controllers\BaseController->setupViewData()
+ 7 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-30 19:03:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-30 19:03:31 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:202
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php(202): mysqli->real_connect('localhost', 'root', '', 'lms_gomez', 3306, '', 0)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\ITE311-GOMEZ\app\Models\NotificationModel.php(33): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\BaseController.php(113): App\Models\NotificationModel->getUnreadCount('3')
+#7 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\BaseController.php(77): App\Controllers\BaseController->setupViewData()
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+#10 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\app\Models\NotificationModel.php(33): CodeIgniter\Model->countAllResults()
+#5 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\BaseController.php(113): App\Models\NotificationModel->getUnreadCount('3')
+#6 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\BaseController.php(77): App\Controllers\BaseController->setupViewData()
+#7 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-11-30 19:03:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:', [...], false)
+ 3 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 4 APPPATH\Models\NotificationModel.php(33): CodeIgniter\Model->countAllResults()
+ 5 APPPATH\Controllers\BaseController.php(113): App\Models\NotificationModel->getUnreadCount('3')
+ 6 APPPATH\Controllers\BaseController.php(77): App\Controllers\BaseController->setupViewData()
+ 7 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-30 19:03:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-30 19:03:40 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:202
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php(202): mysqli->real_connect('localhost', 'root', '', 'lms_gomez', 3306, '', 0)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\ITE311-GOMEZ\app\Models\NotificationModel.php(33): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\BaseController.php(113): App\Models\NotificationModel->getUnreadCount('3')
+#7 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\BaseController.php(77): App\Controllers\BaseController->setupViewData()
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+#10 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\ITE311-GOMEZ\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\ITE311-GOMEZ\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#3 C:\xampp\htdocs\ITE311-GOMEZ\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#4 C:\xampp\htdocs\ITE311-GOMEZ\app\Models\NotificationModel.php(33): CodeIgniter\Model->countAllResults()
+#5 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\BaseController.php(113): App\Models\NotificationModel->getUnreadCount('3')
+#6 C:\xampp\htdocs\ITE311-GOMEZ\app\Controllers\BaseController.php(77): App\Controllers\BaseController->setupViewData()
+#7 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#8 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+#9 C:\xampp\htdocs\ITE311-GOMEZ\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-GOMEZ\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-GOMEZ\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-11-30 19:03:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:', [...], false)
+ 3 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 4 APPPATH\Models\NotificationModel.php(33): CodeIgniter\Model->countAllResults()
+ 5 APPPATH\Controllers\BaseController.php(113): App\Models\NotificationModel->getUnreadCount('3')
+ 6 APPPATH\Controllers\BaseController.php(77): App\Controllers\BaseController->setupViewData()
+ 7 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-30 19:03:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:03:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:04:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:04:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:04:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:04:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:04:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:04:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:04:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:04:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:04:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:04:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:04:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:05:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:06:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:07:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:08:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:09:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:10:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:12:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:13:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:14:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:15:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:16:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:17:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:18:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:19:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:19:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:19:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:19:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:20:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:20:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:20:05 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:20:05 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:20:05 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:20:05 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:20:05 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:20:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:21:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:22:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:23:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:24:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:24:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:24:44 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:24:44 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:24:44 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:24:44 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:24:44 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:24:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:24:54 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:24:54 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:24:54 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:24:54 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:24:54 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:24:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:25:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:25:19 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:25:20 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:25:20 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:25:20 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:25:20 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:25:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:25:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:25:57 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:25:57 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:25:57 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:25:57 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:25:58 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:25:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:26:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:27:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:27:51 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:27:51 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:27:51 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:51 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:51 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:27:53 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:27:53 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:27:53 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:53 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:53 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:27:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:27:56 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:27:56 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:27:56 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:56 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:56 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:27:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:27:58 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:27:58 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:27:58 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:58 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:58 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:27:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:27:59 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:27:59 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:27:59 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:59 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:59 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:27:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:27:59 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:27:59 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:27:59 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:59 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:27:59 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:28:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:28:07 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:28:07 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:28:07 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:28:07 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:28:07 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:28:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:28:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:28:11 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:28:11 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:28:11 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:28:11 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:28:11 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:28:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:28:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:28:14 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:28:14 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:28:14 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:28:14 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:28:14 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:28:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:29:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:30:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:31:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:31:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:31:53 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:31:53 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:31:53 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:31:53 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:31:53 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:31:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:32:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:32:08 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:32:08 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:32:08 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:32:08 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:32:08 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:32:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:32:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:32:09 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:32:09 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:32:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:32:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:32:14 --> Enrolled Course IDs: Array
+(
+    [0] => 1
+    [1] => 4
+    [2] => 10
+    [3] => 11
+)
+
+DEBUG - 2025-11-30 19:32:14 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-11-30 19:32:14 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:32:14 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 12
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => PD312
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:04:15
+            [updated_at] => 2025-10-25 21:04:15
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-11-30 19:32:14 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 11
+            [course] => SYSTEMS INTEGRATION AND ARCHITECTURE 1
+            [description] => SIA101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:45
+            [updated_at] => 2025-10-25 21:03:45
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:19:03
+        )
+
+    [1] => Array
+        (
+            [id] => 10
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => IM101
+            [teacher_id] => 3
+            [created_at] => 2025-10-25 21:03:18
+            [updated_at] => 2025-10-25 21:03:18
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-25 21:18:54
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => ITE311
+            [teacher_id] => 3
+            [created_at] => 2025-10-24 12:59:24
+            [updated_at] => 2025-10-24 12:59:24
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-10-24 12:59:40
+        )
+
+)
+
+DEBUG - 2025-11-30 19:32:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:33:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:34:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:35:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:36:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-30 19:37:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

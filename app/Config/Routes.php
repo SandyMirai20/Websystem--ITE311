@@ -33,6 +33,11 @@ $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
         $routes->post('/notifications/mark_read/(:num)', 'Notifications::mark_as_read/$1');
         
       
+        // Student routes
+        $routes->group('student', ['filter' => 'role:student'], function($routes) {
+            $routes->get('enrolled-courses', 'Student::enrolledCourses', ['as' => 'student.enrolled_courses']);
+        });
+
         // Admin routes
         $routes->group('admin', ['filter' => 'role:admin'], function($routes) {
             // Courses management

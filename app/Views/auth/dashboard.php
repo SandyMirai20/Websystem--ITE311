@@ -356,75 +356,8 @@
             </div>
         </div>
 
-        <!-- Quick Materials Access -->
-        <?php if (!empty($enrolledCourses) && is_array($enrolledCourses)): ?>
-        <div class="row mt-4">
-            <div class="col-12">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title text-danger mb-4">
-                            <i class="fas fa-download me-2"></i>Course Materials
-                        </h5>
-                        <?php
-                        $totalMaterials = 0;
-                        $coursesWithMaterials = 0;
-                        foreach ($enrolledCourses as $course) {
-                            if (is_array($course) && isset($course['id'])) {
-                                $materialModel = new \App\Models\MaterialModel();
-                                $materialsCount = $materialModel->where('course_id', $course['id'])->countAllResults();
-                                $totalMaterials += $materialsCount;
-                                if ($materialsCount > 0) {
-                                    $coursesWithMaterials++;
-                                }
-                            }
-                        }
-                        ?>
-
-                        <?php if ($totalMaterials > 0): ?>
-                            <div class="row text-center mb-4">
-                                <div class="col-4">
-                                    <div class="p-3 bg-light rounded">
-                                        <i class="fas fa-book-open fa-2x text-primary mb-2"></i>
-                                        <h4 class="text-primary mb-0"><?= $coursesWithMaterials ?></h4>
-                                        <small class="text-muted">Courses with Materials</small>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="p-3 bg-light rounded">
-                                        <i class="fas fa-file-alt fa-2x text-success mb-2"></i>
-                                        <h4 class="text-success mb-0"><?= $totalMaterials ?></h4>
-                                        <small class="text-muted">Total Files Available</small>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="p-3 bg-light rounded">
-                                        <i class="fas fa-download fa-2x text-info mb-2"></i>
-                                        <h4 class="text-info mb-0">Ready</h4>
-                                        <small class="text-muted">For Download</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <a href="/student/enrolled-courses" class="btn btn-danger">
-                                    <i class="fas fa-eye me-1"></i> View All Course Materials
-                                </a>
-                            </div>
-                        <?php else: ?>
-                            <div class="text-center py-4">
-                                <i class="fas fa-file-alt fa-3x text-muted mb-3"></i>
-                                <h6 class="text-muted mb-2">No materials available yet</h6>
-                                <p class="text-muted small mb-3">Your teachers haven't uploaded any materials for your enrolled courses yet.</p>
-                                <div class="alert alert-info">
-                                    <i class="fas fa-info-circle me-1"></i>
-                                    Check back later or contact your teachers for course materials.
-                                </div>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-                </div>
             </div>
         </div>
-        <?php endif; ?>
 
         <!-- Enroll Button Script -->
         <script>
