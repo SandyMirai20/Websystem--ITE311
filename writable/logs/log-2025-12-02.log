@@ -71,3 +71,994 @@ DEBUG - 2025-12-02 20:27:31 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-12-02 20:27:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-12-02 20:27:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-12-02 20:27:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:33:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:33:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:33:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:33:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:33:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:33:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:33:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:33:41 --> Enrolled Course IDs: Array
+(
+)
+
+DEBUG - 2025-12-02 20:33:41 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-12-02 20:33:41 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-12-02 20:33:41 --> Available Courses: Array
+(
+)
+
+DEBUG - 2025-12-02 20:33:41 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-12-02 20:33:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:33:56 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-12-02 20:33:56 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-12-02 20:33:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:34:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:34:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:34:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:34:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:34:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:34:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:34:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:34:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-02 20:34:58 --> CSRF token verified.
+DEBUG - 2025-12-02 20:34:58 --> Form data: Array
+(
+    [course] => SYSTEMS ANALYSIS AND DESIGN
+    [description] => 
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-12-02 20:34:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:34:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:35:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:35:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:30 --> Enrolled Course IDs: Array
+(
+)
+
+DEBUG - 2025-12-02 20:36:30 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-12-02 20:36:30 --> Enrollments data: Array
+(
+)
+
+DEBUG - 2025-12-02 20:36:30 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:34:58
+            [updated_at] => 2025-12-02 20:34:58
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-12-02 20:36:30 --> Enrolled Courses: Array
+(
+)
+
+DEBUG - 2025-12-02 20:36:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-02 20:36:34 --> CSRF token verified.
+DEBUG - 2025-12-02 20:36:34 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-12-02 20:36:34 --> POST data: Array
+(
+    [course_id] => 4
+)
+
+DEBUG - 2025-12-02 20:36:34 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => multipart/form-data; boundary=----WebKitFormBoundaryvQ0rbYoCvxt5ODah
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost:8080
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Content-Length] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Length
+            [value:protected] => 274
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Csrf-Token] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Token
+            [value:protected] => 073080878807b71d5ff8bc7a62064c17
+        )
+
+    [X-Csrf-Name] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Csrf-Name
+            [value:protected] => csrf_test_name
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost:8080
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost:8080/dashboard
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => debug-bar-state=minimized; csrf_cookie_name=073080878807b71d5ff8bc7a62064c17; ci_session=274b32ce2348f7ea06db3c9b288d52a3
+        )
+
+)
+
+DEBUG - 2025-12-02 20:36:34 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-12-02 20:36:34 --> Processing enrollment for user ID: 2
+DEBUG - 2025-12-02 20:36:34 --> Enroll endpoint method: POST
+DEBUG - 2025-12-02 20:36:34 --> Attempting enrollment - User ID: 2, Course ID: 4
+DEBUG - 2025-12-02 20:36:34 --> Database connection established
+DEBUG - 2025-12-02 20:36:34 --> Course query result: Array
+(
+    [id] => 4
+    [course] => SYSTEMS ANALYSIS AND DESIGN
+    [description] => 
+)
+
+DEBUG - 2025-12-02 20:36:34 --> EnrollmentModel initialized
+DEBUG - 2025-12-02 20:36:34 --> Is already enrolled: No
+DEBUG - 2025-12-02 20:36:34 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 4
+    [enrolled_at] => 2025-12-02 20:36:34
+)
+
+DEBUG - 2025-12-02 20:36:34 --> Direct DB insert result - Insert ID: 1
+DEBUG - 2025-12-02 20:36:34 --> DB Error: 
+DEBUG - 2025-12-02 20:36:34 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-12-02 20:36:34 --> Enrollment successful - ID: 1, User: 2, Course: 4
+DEBUG - 2025-12-02 20:36:34 --> Notification created for user 2: You have been enrolled in SYSTEMS ANALYSIS AND DESIGN
+DEBUG - 2025-12-02 20:36:34 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"4","course":"SYSTEMS ANALYSIS AND DESIGN","description":null,"enrolled_at":"2025-12-02 20:36:34"},"debug":{"insert_id":1,"timestamp":"2025-12-02 20:36:34"},"csrf":{"token":"csrf_test_name","hash":"c80d6f526bf02ff3e2d82816433795e4"}}
+DEBUG - 2025-12-02 20:36:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:36 --> Enrolled Course IDs: Array
+(
+    [0] => 4
+)
+
+DEBUG - 2025-12-02 20:36:36 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-12-02 20:36:36 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:34:58
+            [updated_at] => 2025-12-02 20:34:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:36:34
+        )
+
+)
+
+DEBUG - 2025-12-02 20:36:36 --> Available Courses: Array
+(
+)
+
+DEBUG - 2025-12-02 20:36:36 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:34:58
+            [updated_at] => 2025-12-02 20:34:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:36:34
+        )
+
+)
+
+DEBUG - 2025-12-02 20:36:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:48 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-12-02 20:36:48 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:34:58
+            [updated_at] => 2025-12-02 20:34:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:36:34
+        )
+
+)
+
+DEBUG - 2025-12-02 20:36:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:36:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:36 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-12-02 20:37:36 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:34:58
+            [updated_at] => 2025-12-02 20:34:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:36:34
+        )
+
+)
+
+DEBUG - 2025-12-02 20:37:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-02 20:37:58 --> CSRF token verified.
+DEBUG - 2025-12-02 20:37:58 --> Form data: Array
+(
+    [course] => NETWORKING 2
+    [description] => 
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-12-02 20:37:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:37:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-02 20:38:09 --> CSRF token verified.
+DEBUG - 2025-12-02 20:38:09 --> Form data: Array
+(
+    [course] => WEB SYSTEM AND TECHNOLOGIES
+    [description] => 
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-12-02 20:38:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-02 20:38:29 --> CSRF token verified.
+DEBUG - 2025-12-02 20:38:29 --> Form data: Array
+(
+    [course] => ADVANCED DATABASE SYSTEMS
+    [description] => 
+    [teacher_id] => 3
+)
+
+DEBUG - 2025-12-02 20:38:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:38:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:02 --> Enrolled Course IDs: Array
+(
+    [0] => 4
+)
+
+DEBUG - 2025-12-02 20:39:02 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-12-02 20:39:02 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:34:58
+            [updated_at] => 2025-12-02 20:34:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:36:34
+        )
+
+)
+
+DEBUG - 2025-12-02 20:39:02 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [course] => NETWORKING 2
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:37:58
+            [updated_at] => 2025-12-02 20:37:58
+            [teacher_name] => Jim Jamero
+        )
+
+    [1] => Array
+        (
+            [id] => 6
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:38:09
+            [updated_at] => 2025-12-02 20:38:09
+            [teacher_name] => Jim Jamero
+        )
+
+    [2] => Array
+        (
+            [id] => 7
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:38:29
+            [updated_at] => 2025-12-02 20:38:29
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-12-02 20:39:02 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:34:58
+            [updated_at] => 2025-12-02 20:34:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:36:34
+        )
+
+)
+
+DEBUG - 2025-12-02 20:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:07 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-12-02 20:39:07 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:34:58
+            [updated_at] => 2025-12-02 20:34:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:36:34
+        )
+
+)
+
+DEBUG - 2025-12-02 20:39:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-02 20:39:10 --> CSRF token verified.
+DEBUG - 2025-12-02 20:39:10 --> === START ENROLLMENT REQUEST ===
+DEBUG - 2025-12-02 20:39:10 --> POST data: Array
+(
+    [course_id] => 5
+)
+
+DEBUG - 2025-12-02 20:39:10 --> Headers: Array
+(
+    [Content-Type] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Type
+            [value:protected] => application/x-www-form-urlencoded; charset=UTF-8
+        )
+
+    [Host] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Host
+            [value:protected] => localhost:8080
+        )
+
+    [Connection] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Connection
+            [value:protected] => keep-alive
+        )
+
+    [Content-Length] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Content-Length
+            [value:protected] => 59
+        )
+
+    [Sec-Ch-Ua-Platform] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Platform
+            [value:protected] => "Windows"
+        )
+
+    [X-Requested-With] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => X-Requested-With
+            [value:protected] => XMLHttpRequest
+        )
+
+    [User-Agent] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => User-Agent
+            [value:protected] => Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+        )
+
+    [Accept] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept
+            [value:protected] => application/json, text/javascript, */*; q=0.01
+        )
+
+    [Sec-Ch-Ua] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua
+            [value:protected] => "Chromium";v="142", "Google Chrome";v="142", "Not_A Brand";v="99"
+        )
+
+    [Sec-Ch-Ua-Mobile] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Ch-Ua-Mobile
+            [value:protected] => ?0
+        )
+
+    [Origin] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Origin
+            [value:protected] => http://localhost:8080
+        )
+
+    [Sec-Fetch-Site] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Site
+            [value:protected] => same-origin
+        )
+
+    [Sec-Fetch-Mode] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Mode
+            [value:protected] => cors
+        )
+
+    [Sec-Fetch-Dest] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Sec-Fetch-Dest
+            [value:protected] => empty
+        )
+
+    [Referer] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Referer
+            [value:protected] => http://localhost:8080/student/courses
+        )
+
+    [Accept-Encoding] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Encoding
+            [value:protected] => gzip, deflate, br, zstd
+        )
+
+    [Accept-Language] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Accept-Language
+            [value:protected] => en-PH,en-US;q=0.9,en;q=0.8
+        )
+
+    [Cookie] => CodeIgniter\HTTP\Header Object
+        (
+            [name:protected] => Cookie
+            [value:protected] => debug-bar-state=minimized; csrf_cookie_name=c80d6f526bf02ff3e2d82816433795e4; ci_session=6a9e3810c00fe50079730dddd2ef5ed1
+        )
+
+)
+
+DEBUG - 2025-12-02 20:39:10 --> User data: Array
+(
+    [id] => 2
+    [name] => Jerald Maca
+    [email] => JeraldMaca@gmail.com
+    [role] => student
+)
+
+DEBUG - 2025-12-02 20:39:10 --> Processing enrollment for user ID: 2
+DEBUG - 2025-12-02 20:39:10 --> Enroll endpoint method: POST
+DEBUG - 2025-12-02 20:39:10 --> Attempting enrollment - User ID: 2, Course ID: 5
+DEBUG - 2025-12-02 20:39:10 --> Database connection established
+DEBUG - 2025-12-02 20:39:10 --> Course query result: Array
+(
+    [id] => 5
+    [course] => NETWORKING 2
+    [description] => 
+)
+
+DEBUG - 2025-12-02 20:39:10 --> EnrollmentModel initialized
+DEBUG - 2025-12-02 20:39:10 --> Is already enrolled: No
+DEBUG - 2025-12-02 20:39:10 --> Attempting to enroll user with data: Array
+(
+    [student_id] => 2
+    [course_id] => 5
+    [enrolled_at] => 2025-12-02 20:39:10
+)
+
+DEBUG - 2025-12-02 20:39:10 --> Direct DB insert result - Insert ID: 2
+DEBUG - 2025-12-02 20:39:10 --> DB Error: 
+DEBUG - 2025-12-02 20:39:10 --> === END ENROLLMENT REQUEST ===
+DEBUG - 2025-12-02 20:39:10 --> Enrollment successful - ID: 2, User: 2, Course: 5
+DEBUG - 2025-12-02 20:39:10 --> Notification created for user 2: You have been enrolled in NETWORKING 2
+DEBUG - 2025-12-02 20:39:10 --> Sending success response: {"success":true,"message":"Enrolled successfully.","course":{"id":"5","course":"NETWORKING 2","description":null,"enrolled_at":"2025-12-02 20:39:10"},"debug":{"insert_id":2,"timestamp":"2025-12-02 20:39:10"},"csrf":{"token":"csrf_test_name","hash":"f56e19cb31d1d1157962f00c0c2d4b1f"}}
+DEBUG - 2025-12-02 20:39:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-02 20:39:19 --> CodeIgniter\Security\Exceptions\SecurityException: The action you requested is not allowed.
+[Method: POST, Route: student/enroll]
+in SYSTEMPATH\Security\Security.php on line 262.
+ 1 SYSTEMPATH\Security\Security.php(262): CodeIgniter\Security\Exceptions\SecurityException::forDisallowedAction()
+ 2 SYSTEMPATH\Filters\CSRF.php(52): CodeIgniter\Security\Security->verify(Object(CodeIgniter\HTTP\IncomingRequest))
+ 3 SYSTEMPATH\Filters\Filters.php(241): CodeIgniter\Filters\CSRF->before(Object(CodeIgniter\HTTP\IncomingRequest), null)
+ 4 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 5 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('student/enroll', 'before')
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ITE311-GOMEZ\\public\\index.php')
+DEBUG - 2025-12-02 20:39:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:27 --> Enrolled Course IDs: Array
+(
+    [0] => 4
+    [1] => 5
+)
+
+DEBUG - 2025-12-02 20:39:27 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-12-02 20:39:27 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [course] => NETWORKING 2
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:37:58
+            [updated_at] => 2025-12-02 20:37:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:39:10
+        )
+
+    [1] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:34:58
+            [updated_at] => 2025-12-02 20:34:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:36:34
+        )
+
+)
+
+DEBUG - 2025-12-02 20:39:27 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 6
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:38:09
+            [updated_at] => 2025-12-02 20:38:09
+            [teacher_name] => Jim Jamero
+        )
+
+    [1] => Array
+        (
+            [id] => 7
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:38:29
+            [updated_at] => 2025-12-02 20:38:29
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-12-02 20:39:27 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [course] => NETWORKING 2
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:37:58
+            [updated_at] => 2025-12-02 20:37:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:39:10
+        )
+
+    [1] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:34:58
+            [updated_at] => 2025-12-02 20:34:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:36:34
+        )
+
+)
+
+DEBUG - 2025-12-02 20:39:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:39:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:41:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:42:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:43:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:44:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:45:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:46:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:48:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:49:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:50:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:51:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:52:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:53:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:54:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:55:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:56:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:57:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:58:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 20:59:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:00:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:01:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:02:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:03:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:04:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:05:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:08:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:10:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:12:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:13:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:14:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:14:13 --> Enrolled Course IDs: Array
+(
+    [0] => 4
+    [1] => 5
+)
+
+DEBUG - 2025-12-02 21:14:13 --> Enrollments query: SELECT `courses`.`id`, `courses`.`course`, `courses`.`description`, `courses`.`teacher_id`, `courses`.`created_at`, `courses`.`updated_at`, `users`.`name` as `teacher_name`, `enrollments`.`enrolled_at`
+FROM `enrollments`
+JOIN `courses` ON `courses`.`id` = `enrollments`.`course_id`
+LEFT JOIN `users` ON `users`.`id` = `courses`.`teacher_id`
+WHERE `enrollments`.`student_id` = 2
+ORDER BY `enrollments`.`enrolled_at` DESC
+DEBUG - 2025-12-02 21:14:13 --> Enrollments data: Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [course] => NETWORKING 2
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:37:58
+            [updated_at] => 2025-12-02 20:37:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:39:10
+        )
+
+    [1] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:34:58
+            [updated_at] => 2025-12-02 20:34:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:36:34
+        )
+
+)
+
+DEBUG - 2025-12-02 21:14:13 --> Available Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 6
+            [course] => WEB SYSTEM AND TECHNOLOGIES
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:38:09
+            [updated_at] => 2025-12-02 20:38:09
+            [teacher_name] => Jim Jamero
+        )
+
+    [1] => Array
+        (
+            [id] => 7
+            [course] => ADVANCED DATABASE SYSTEMS
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:38:29
+            [updated_at] => 2025-12-02 20:38:29
+            [teacher_name] => Jim Jamero
+        )
+
+)
+
+DEBUG - 2025-12-02 21:14:13 --> Enrolled Courses: Array
+(
+    [0] => Array
+        (
+            [id] => 5
+            [course] => NETWORKING 2
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:37:58
+            [updated_at] => 2025-12-02 20:37:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:39:10
+        )
+
+    [1] => Array
+        (
+            [id] => 4
+            [course] => SYSTEMS ANALYSIS AND DESIGN
+            [description] => 
+            [teacher_id] => 3
+            [created_at] => 2025-12-02 20:34:58
+            [updated_at] => 2025-12-02 20:34:58
+            [teacher_name] => Jim Jamero
+            [enrolled_at] => 2025-12-02 20:36:34
+        )
+
+)
+
+DEBUG - 2025-12-02 21:14:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:14:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:14:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:14:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:14:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:14:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:14:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:15:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-02 21:15:01 --> CSRF token verified.
+DEBUG - 2025-12-02 21:15:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:15:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:15:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-02 21:15:42 --> CSRF token verified.
+DEBUG - 2025-12-02 21:15:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:16:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-02 21:16:08 --> CSRF token verified.
+DEBUG - 2025-12-02 21:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:16:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-02 21:16:44 --> CSRF token verified.
+DEBUG - 2025-12-02 21:16:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:16:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:17:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:17:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:17:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:19:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:19:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:19:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:19:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:19:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-02 21:19:49 --> CSRF token verified.
+DEBUG - 2025-12-02 21:19:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:19:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:19:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:19:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-02 21:20:15 --> CSRF token verified.
+DEBUG - 2025-12-02 21:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:20:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:20:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:20:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:20:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-12-02 21:20:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

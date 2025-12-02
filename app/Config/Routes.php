@@ -45,6 +45,18 @@ $routes->group('', ['namespace' => 'App\Controllers'], function($routes) {
             $routes->get('courses/create', 'Admin\Courses::create');
             $routes->post('courses', 'Admin\Courses::store', ['filter' => 'csrf']);
             $routes->get('courses/show/(:num)', 'Admin\Courses::show/$1', ['as' => 'admin.course.show']);
+            
+            // Users management
+            $routes->get('users', 'Admin\Users::index');
+            $routes->get('users/create', 'Admin\Users::create');
+            $routes->post('users', 'Admin\Users::store', ['filter' => 'csrf']);
+            $routes->get('users/(:num)/edit', 'Admin\Users::edit/$1');
+            $routes->post('users/(:num)/update', 'Admin\Users::update/$1', ['filter' => 'csrf']);
+            $routes->post('users/(:num)/change-role', 'Admin\Users::changeRole/$1', ['filter' => 'csrf']);
+            $routes->post('users/(:num)/deactivate', 'Admin\Users::deactivate/$1', ['filter' => 'csrf']);
+            $routes->post('users/(:num)/activate', 'Admin\Users::activate/$1', ['filter' => 'csrf']);
+            $routes->post('users/(:num)/delete', 'Admin\Users::delete/$1', ['filter' => 'csrf']);
+            $routes->post('users/(:num)/reset-password', 'Admin\Users::resetPassword/$1', ['filter' => 'csrf']);
         });
 
         // Materials routes
