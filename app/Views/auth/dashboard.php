@@ -117,7 +117,7 @@
                                 <p class="text-muted mb-3 mb-md-0">Manage your courses and upload materials here.</p>
                             </div>
                             <div class="col-md-4 text-md-end">
-                                <a href="/teacher/courses" class="btn btn-danger">
+                                <a href="<?= base_url('teacher/courses') ?>" class="btn btn-danger">
                                     <i class="fas fa-arrow-right me-1"></i> View All
                                 </a>
                             </div>
@@ -167,10 +167,10 @@
                                                 <?php endif; ?>
                                             </div>
                                             <div class="mt-3 d-flex gap-2">
-                                                <a href="/teacher/courses/<?= $course['id'] ?>" class="btn btn-sm btn-outline-primary flex-grow-1">
+                                                <a href="<?= base_url('teacher/courses/' . $course['id']) ?>" class="btn btn-sm btn-outline-primary flex-grow-1">
                                                     <i class="fas fa-eye me-1"></i> View
                                                 </a>
-                                                <a href="/teacher/course/<?= $course['id'] ?>/upload" class="btn btn-sm btn-outline-success">
+                                                <a href="<?= base_url('teacher/course/' . $course['id'] . '/upload') ?>" class="btn btn-sm btn-outline-success">
                                                     <i class="fas fa-upload me-1"></i> Upload
                                                 </a>
                                             </div>
@@ -197,7 +197,7 @@
                             <h5 class="mb-0">Classes</h5>
                         </div>
                         <p class="text-muted mb-3">View and manage your classes</p>
-                        <a href="/teacher/courses" class="btn btn-outline-danger w-100">
+                        <a href="<?= base_url('teacher/courses') ?>" class="btn btn-outline-danger w-100">
                             <i class=""></i> Open Classes
                         </a>
                     </div>
@@ -214,7 +214,7 @@
                             <h5 class="mb-0">Materials</h5>
                         </div>
                         <p class="text-muted mb-3">Upload and manage course materials</p>
-                        <a href="/teacher/courses" class="btn btn-outline-danger w-100">
+                        <a href="<?= base_url('teacher/courses') ?>" class="btn btn-outline-danger w-100">
                             <i class=""></i> Manage Materials
                         </a>
                     </div>
